@@ -3,9 +3,9 @@ import { routerMiddleware } from 'react-router-redux';
 import thunk from 'redux-thunk';
 import createHistory from 'history/createBrowserHistory';
 import promise from 'redux-promise';
+import rootReducer from './reducers';
 
 export const history = createHistory();
-
 const initialState = {};
 const enhancers = [];
 const middleware = [
@@ -28,8 +28,9 @@ const composedEnhancers = compose(
 );
 
 const store = createStore(
+  rootReducer,
   initialState,
-  composedEnhancers
+  composedEnhancers,
 );
 
 export default store;

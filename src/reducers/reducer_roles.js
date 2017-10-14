@@ -1,14 +1,14 @@
 import { ADD_ROLE } from '../actions'
-import _ from 'lodash';
+// import _ from 'lodash';
 
-export default (state = {}, action) => {
+export default (state = {}, action = { type: 'SOMETHING', payload: {} }) => {
   switch (action.type) {
+
     case ADD_ROLE:
       return {
         ...state,
-        action.payload.role
+          roles: action.payload
       }
-      break;
     default:
       return state;
   }

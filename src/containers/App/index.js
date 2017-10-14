@@ -4,7 +4,7 @@ import Home from '../Home';
 import About from '../About';
 import AddRolePage from '../Add-Role-Page';
 
-
+// FIXME: Routing is broken
 const App = () => (
     <div>
       <header>
