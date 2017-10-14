@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 import Home from '../Home';
 import About from '../About';
 import AddRolePage from '../Add-Role-Page';
@@ -13,9 +13,11 @@ const App = () => (
     </header>
 
     <main>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/about-us" component={About} />
-      <Route exact path="/add-role" component={AddRolePage}> </Route>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/about-us" component={About} />
+        <Route path="/add-role" component={AddRolePage} />
+    </Switch>
     </main>
   </div>
 );
