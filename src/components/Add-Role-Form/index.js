@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
 
@@ -20,7 +20,8 @@ let AddRoleForm = props => {
       </div>
       <button type="submit">Submit</button>
     </form>
-  };
+    );
+  }
 
   AddRoleForm = reduxForm({
     // a unique name for the form

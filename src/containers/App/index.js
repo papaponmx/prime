@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import Home from '../Home';
 import About from '../About';
-import AddRoleForm from '../Add-Role-Form';
+import AddRolePage from '../Add-Role-Page';
 
 const App = () => (
   <div>
@@ -15,7 +15,7 @@ const App = () => (
     <main>
       <Route exact path="/" component={Home} />
       <Route exact path="/about-us" component={About} />
-      <Route exact path="/add-role" component={AddRoleForm}> </Route>
+      <Route exact path="/add-role" component={AddRolePage}> </Route>
     </main>
   </div>
 );
