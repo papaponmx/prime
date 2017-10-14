@@ -1,10 +1,9 @@
-import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 import React from 'react';
 import Home from '../Home';
 import About from '../About';
 import AddRolePage from '../Add-Role-Page';
 
-// FIXME: Routing is broken
 const App = () => (
     <div>
       <header>
@@ -12,7 +11,6 @@ const App = () => (
         <Link to="/about-us">About</Link>
         <Link to="/add-role">Add Role</Link>
       </header>
-      <BrowserRouter>
         <main>
           <Switch>
             <Route exact path="/" component={Home} />
@@ -20,7 +18,6 @@ const App = () => (
             <Route path="/add-role" component={AddRolePage} />
           </Switch>
         </main>
-    </BrowserRouter>
     </div>
 );
 
