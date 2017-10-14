@@ -1,25 +1,53 @@
-import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import React from 'react';
 
+/* TODO: Add action an reducer to bind with the store */
+/* TODO: Add a note message that explains what a role should be */
 
-let AddRoleForm = props => {
-  const { handleSubmit } = props
-  return (
-    <form onSubmit={ handleSubmit }>
-      <div>
-        <label htmlFor="firstName">Role</label>
-        <Field name="firstName" component="input" type="text" />
-      </div>
-      {/* TODO: Add action an reducer to bind with the store */}
-      {/* TODO: Add form validation */}
-      {/* TODO: Add a note message that explains what a role should be */}
-      <button type="submit">Submit</button>
-    </form>
-    );
+const validate = values => {
+  const errors = {}
+  if (!values.role) {
+    errors.role = 'Required'
+  } else if (values.role.length < 3) {
+    errors.role = 'Must be 3 characters or more'
   }
+  return errors
+}
 
-  AddRoleForm = reduxForm({
-    form: 'add-role-form'
-  })(AddRoleForm);
+const renderField = ({
+  input,
+  label,
+  type,
+  meta: { touched, error }
+}) => (
+  <div>
+    <label>{label}</label>
+    <div>
+      <input {...input} placeholder={label} type={type} />
+    </div>
+  </div>
+)
 
-  export default AddRoleForm;
+const AddRoleForm = props => {
+  const { handleSubmit, submitting } = props
+  return (
+    <form onSubmit={handleSubmit}>
+      <Field
+        name="role"
+        type="text"
+        component={renderField}
+        label="Role"
+      />
+      <div>
+        <button type="submit" disabled={submitting}>
+          Submit
+        </button>
+      </div>
+    </form>
+  )
+}
+
+export default reduxForm({
+  form: 'syncValidation', // a unique identifier for this form
+  validate, // <--- validation function given to redux-form
+})(AddRoleForm);
