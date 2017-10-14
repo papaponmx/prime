@@ -1,7 +1,7 @@
 import { Field, reduxForm } from 'redux-form';
 import React from 'react';
 
-/* TODO: Add action an reducer to bind with the store */
+/* TODO: Add action an reducer to bind submited role with the store */
 /* TODO: Add a note message that explains what a role should be */
 
 const validate = values => {
