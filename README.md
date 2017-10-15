@@ -1,6 +1,6 @@
 IDEA: Move this section to docs folder.
 
-#Prime
+# Prime
 
 TODO: Write intro to prime.
 
@@ -25,33 +25,30 @@ Here is a list example of the roles I play:
 * Teacher.
 
 #### Goals
-You should achieve from two to five goals for each role each week.
+You should achieve from two to five goals for each role each week. Goals should answer some of this questions:
 
-Your goals should answer some of this questions:
+_What are the things that if I done in a regular basis, would change my life dramaticaly?_
 
-* What are the things that if I done in a regular basis, would change my life dramaticaly?
-* What is the one thing I can acomplish, so it makes everything easier or unnecesary?
-* What can  I do today in order to improve all of my tomorrows?
+_ What is the one thing I can acomplish, so it makes everything easier or unnecesary?_
+
+_ What can  I do today in order to improve all of my tomorrows?_
 
 
 Again, here is a list of relevant goals for the week. based on the previous list.
 
-** Family member **
+**Family member**
   1. Call my parents twice a week.
   2. Stay in touch with my cousins.
   3. Spend an afternoon with my brother.
 
-** Student **
+**Student**
   1. Read 20 minutes a day.
   2. Deliver my homework for the week.
 
-** Developer **
+**Developer**
   1. Write the appropiate tests for my code.
   2. Spend 3 hours a week mastering a new technology.
 
 ** Teacher **
   1. Make sure I spend an hour preparing my lessons.
   2. Ask for feedback from my students.
-
-
-IDEA: Explain the 3rd of the Seven habits of highly effective people.
