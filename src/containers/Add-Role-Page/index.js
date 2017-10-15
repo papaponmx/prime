@@ -9,10 +9,7 @@ import AddRoleForm from '../../components/Add-Role-Form';
 
 class AddRolePage extends React.Component {
   submit = (values) => {
-    // event.preventDefault();
-
     this.props.addRole(values);
-    console.log(values);
   }
   render() {
     return (
