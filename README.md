@@ -25,6 +25,7 @@ Here is a list example of the roles I play:
 * Teacher.
 
 ### Goals
+
 You should achieve from two to five goals for each role each week. Goals should answer some of this questions:
 
 > _What are the things that if I done in a regular basis, would change my life dramaticaly?_
