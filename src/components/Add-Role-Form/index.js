@@ -1,6 +1,5 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-/* TODO: Add a note message that explains what a role should be */
 
 const validate = values => {
   const errors = {}
@@ -41,6 +40,7 @@ const AddRoleForm = props => {
           Submit
         </button>
       </div>
+      <span className="form-info">What are the roles you play in your day to day life?</span>
     </form>
   )
 }
