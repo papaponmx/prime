@@ -12,7 +12,7 @@ It is meant to be portable, accessible and easy to use.
 
 ## How it works?
 
-### Define your roles
+### Define your roles
 Start by defining the relevant roles you play in your life.  A student? A wife? An athelete?
 
 Are you a father? If so, how good of a father are you?
@@ -27,11 +27,11 @@ Here is a list example of the roles I play:
 ### Goals
 You should achieve from two to five goals for each role each week. Goals should answer some of this questions:
 
-_What are the things that if I done in a regular basis, would change my life dramaticaly?_
+> _What are the things that if I done in a regular basis, would change my life dramaticaly?_
 
-_ What is the one thing I can acomplish, so it makes everything easier or unnecesary?_
+_What is the one thing I can acomplish, so it makes everything easier or unnecesary?_
 
-_ What can  I do today in order to improve all of my tomorrows?_
+_What can  I do today in order to improve all of my tomorrows?_
 
 
 Again, here is a list of relevant goals for the week. based on the previous list.
