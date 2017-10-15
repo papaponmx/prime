@@ -13,6 +13,7 @@ export default (state = initialState, action) => {
         ...state,
         roles: [...state.roles , action.payload]
       }
+      // TODO: Validate if the new role already extists
 
     case DELETE_ROLE:
       const newRoles = _.omit(state.roles, action.payload);
