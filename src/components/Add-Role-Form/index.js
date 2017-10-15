@@ -1,6 +1,5 @@
-import { Field, reduxForm } from 'redux-form';
 import React from 'react';
-
+import { Field, reduxForm } from 'redux-form';
 /* TODO: Add a note message that explains what a role should be */
 
 const validate = values => {
@@ -47,6 +46,6 @@ const AddRoleForm = props => {
 }
 
 export default reduxForm({
-  form: 'syncValidation', // a unique identifier for this form
-  validate, // <--- validation function given to redux-form
+  validate,
+  form: 'syncValidation',
 })(AddRoleForm);

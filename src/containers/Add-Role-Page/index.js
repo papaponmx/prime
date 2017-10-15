@@ -1,9 +1,17 @@
+import { addRole } from '../../actions';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import React from 'react';
 import AddRoleForm from '../../components/Add-Role-Form';
+// import { Link } from 'react-router-dom';
 
-export default class AddRolePage extends React.Component {
+
+
+class AddRolePage extends React.Component {
   submit = (values) => {
-    // print the form values to the console
+    // event.preventDefault();
+
+    this.props.addRole(values);
     console.log(values);
   }
   render() {
@@ -12,3 +20,9 @@ export default class AddRolePage extends React.Component {
     )
   }
 }
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({addRole},dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(AddRolePage);
