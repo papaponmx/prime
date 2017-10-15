@@ -10,9 +10,9 @@ It is based on the idea that you begin with the end in mind. Considering the con
 
 It is meant to be portable, accessible and easy to use.
 
-### How it works?
+## How it works?
 
-#### Define your roles
+### Define your roles
 Start by defining the relevant roles you play in your life.  A student? A wife? An athelete?
 
 Are you a father? If so, how good of a father are you?
@@ -24,7 +24,7 @@ Here is a list example of the roles I play:
 * Developer.
 * Teacher.
 
-#### Goals
+### Goals
 You should achieve from two to five goals for each role each week. Goals should answer some of this questions:
 
 _What are the things that if I done in a regular basis, would change my life dramaticaly?_
@@ -49,6 +49,6 @@ Again, here is a list of relevant goals for the week. based on the previous list
   1. Write the appropiate tests for my code.
   2. Spend 3 hours a week mastering a new technology.
 
-** Teacher **
+**Teacher**
   1. Make sure I spend an hour preparing my lessons.
   2. Ask for feedback from my students.
