@@ -5,7 +5,7 @@ export default class RolesList extends Component {
   renderList() {
     if (this.props.roles.length === 0) {
       return <span className="card-info">
-        Please add some roles
+        Please add some roles.
       </span>
     } else {
       return _.map(this.props.roles, role => {
@@ -16,13 +16,9 @@ export default class RolesList extends Component {
   }
 
   render() {
-    console.log(this.renderList());
     return (
-      <div className="roles-list">
-        <ul>
-          {this.renderList()}
-        </ul>
-      </div>
-    );
+      <ul className="roles-list">
+        {this.renderList()}
+      </ul>);
+    }
   }
-}
