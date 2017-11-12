@@ -2,8 +2,6 @@ IDEA: Move this section to docs folder.
 
 # Prime
 
-TODO: Write intro to prime.
-
 Welcome to prime. This is a tool created to help achieve your goals on a week to week basis.
 
 It is based on the idea that you begin with the end in mind. Considering the context of a year or a decade.
