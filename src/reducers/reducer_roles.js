@@ -11,7 +11,8 @@ export default (state = initialState, action) => {
     case ADD_ROLE:
       return {
         ...state,
-        roles: [...state.roles , action.payload]
+        ...state.roles.concat(...state.roles, action.payload)
+
       }
       // FIXME: Roles are being set to state.roles.roles
       // TODO: Validate if the new role already extists
