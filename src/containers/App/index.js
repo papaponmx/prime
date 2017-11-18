@@ -9,7 +9,7 @@ import MenuIcon from 'material-ui-icons/Menu';
 import React from 'react';
 import RolePage from '../Roles';
 import Typography from 'material-ui/Typography';
-
+import AddRolesPage from '../Add-Roles-Page';
 
 const App = () => (
     <div>
@@ -18,6 +18,7 @@ const App = () => (
           <Link to="/">Home</Link>
           <Link to="/about-us">About</Link>
           <Link to="/roles">Roles</Link>
+          <Link to="/roles/add">Add Role</Link>
         </Typography>
         <IconButton color="contrast" aria-label="Menu">
           <MenuIcon />
@@ -27,6 +28,7 @@ const App = () => (
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/about-us" component={About} />
+          <Route path="/roles/add" component={AddRolesPage} />
           <Route path="/roles" component={RolePage} />
           </Switch>
         </main>

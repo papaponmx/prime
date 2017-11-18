@@ -6,7 +6,7 @@ import AddRoleForm from '../../components/Add-Role-Form';
 import RolesList from '../../components/roles-list';
 import '../../reducers';
 import Button from 'material-ui/Button';
-
+import Dialog from 'material-ui/Dialog';
 
 class RolePage extends React.Component {
   submit = (values, event) => {
@@ -19,7 +19,7 @@ class RolePage extends React.Component {
       <div>
         <h1>Roles</h1>
         <RolesList roles={this.props.roles.roles} />
-        <Button>Add Role</Button>
+        <Button>Take me to Add Role</Button>
       </div>
     )
   }
