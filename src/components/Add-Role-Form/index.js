@@ -35,7 +35,6 @@ const AddRoleForm = props => {
         component={renderField}
         label="Role"
       />
-      <span className="form-info">What are the roles you play in your day to day life?</span>
       <button type="submit" disabled={submitting}>
         Submit
       </button>

@@ -13,18 +13,16 @@ import Typography from 'material-ui/Typography';
 
 const App = () => (
     <div>
-      <header>
-        <AppBar>
-          <Typography>
-            <Link to="/">Home</Link>
-            <Link to="/about-us">About</Link>
-            <Link to="/roles">Roles</Link>
-          </Typography>
-          <IconButton color="contrast" aria-label="Menu">
-            <MenuIcon />
-          </IconButton>
-        </AppBar>
-      </header>
+      <AppBar>
+        <Typography>
+          <Link to="/">Home</Link>
+          <Link to="/about-us">About</Link>
+          <Link to="/roles">Roles</Link>
+        </Typography>
+        <IconButton color="contrast" aria-label="Menu">
+          <MenuIcon />
+        </IconButton>
+      </AppBar>
       <main>
         <Switch>
           <Route exact path="/" component={Home} />

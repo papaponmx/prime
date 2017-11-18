@@ -17,9 +17,9 @@ class RolePage extends React.Component {
   render() {
     return (
       <div>
-        <AddRoleForm onSubmit={this.submit} />
+        <h1>Roles</h1>
         <RolesList roles={this.props.roles.roles} />
-        <Button>Do stuff</Button>
+        <Button>Add Role</Button>
       </div>
     )
   }
