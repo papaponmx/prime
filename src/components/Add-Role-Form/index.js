@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Field, reduxForm, } from 'redux-form'
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
+import { reset } from 'redux-form';
 
 const renderField = props => {
   // FIXME: When I use this function,  redux-form does not emmit the event, nor catches the input value.
@@ -15,6 +16,7 @@ const renderField = props => {
 }
 
 // TODO: Add role description input to the form and to Redux.
+// TODO: Add validations;
 
 class AddRoleForm extends React.Component {  
   render() {
@@ -33,6 +35,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onSubmit: (values) => {
       dispatch(addRole({payload: values}));
+      dispatch(reset('AddRoleForm'));
     }
 
   }
