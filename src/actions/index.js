@@ -6,6 +6,7 @@ export function addRole(action) {
   return {
     type: ADD_ROLE,
     payload: action.payload.role,
+    goals: []
   }
 }
 
