@@ -7,7 +7,7 @@ import RolesList from '../../components/roles-list';
 const Home = props => (
   <div>
     <h1>Home</h1>
-    <RolesList roles={['Friend', 'Daughter' ]} />
+    <RolesList />
     <p><button onClick={() => props.changePage()}>Go to about page via redux</button></p>
   </div>
 )
