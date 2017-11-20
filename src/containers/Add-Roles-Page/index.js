@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
+import AddRoleForm from '../../components/Add-Role-Form';
 
-export default class AddRolesPage extends React.Component {
+export default class AddRolesPage extends Component {
     render() {
         return (
-            <seciton>
-                <h1>YOU ARE in Add Roles</h1>
-             </seciton>
+            <div>
+                <h1>Add Roles</h1>
+                <AddRoleForm /> 
+            </div>
         )
     }
 }
-

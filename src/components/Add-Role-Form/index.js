@@ -1,48 +1,20 @@
-import React from 'react';
-import { Field, reduxForm } from 'redux-form';
+import React from 'react'
+// import { connect } from 'react-redux'
+import { Field, reduxForm, } from 'redux-form'
 
-const validate = values => {
-  const errors = {}
-  if (!values.role) {
-    errors.role = 'Required'
-  } else if (values.role.length < 3) {
-    errors.role = 'Must be 3 characters or more'
+
+class AddRoleForm extends React.Component {
+
+  render() {
+    return (
+      <form>
+        <label htmlFor="add-role-input">Add Role:</label>
+        <Field name="add-role-input" component="input" type="text" id="add-role-input"/>
+      </form>
+    )
   }
-  return errors
 }
 
-const renderField = ({
-  input,
-  label,
-  type,
-  meta: { touched, error }
-}) => (
-  <div>
-    <label>{label}</label>
-    <div>
-      <input {...input} placeholder={label} type={type} />
-    </div>
-  </div>
-)
-
-const AddRoleForm = props => {
-  const { handleSubmit, submitting } = props
-  return (
-    <form onSubmit={handleSubmit}>
-      <Field
-        name="role"
-        type="text"
-        component={renderField}
-        label="Role"
-      />
-      <button type="submit" disabled={submitting}>
-        Submit
-      </button>
-    </form>
-  )
-}
-
-export default reduxForm({
-  validate,
-  form: 'syncValidation',
+export default AddRoleForm = reduxForm({
+  form: 'AddRoleForm',
 })(AddRoleForm);

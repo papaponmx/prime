@@ -2,11 +2,11 @@ import { addRole } from '../../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import React from 'react';
-import AddRoleForm from '../../components/Add-Role-Form';
+// import AddRoleForm from '../../components/Add-Role-Form';
 import RolesList from '../../components/roles-list';
 import '../../reducers';
 import Button from 'material-ui/Button';
-import Dialog from 'material-ui/Dialog';
+// import Dialog from 'material-ui/Dialog';
 
 class RolePage extends React.Component {
   submit = (values, event) => {
