@@ -14,7 +14,7 @@ class RolePage extends React.Component {
       <div>
         <h1>Roles</h1>
         <RolesList roles={this.props.roles} />
-        <Button onClick={() => this.props.changePage()}>Take me to Add Role</Button>
+        <Button onClick={() => this.props.changePage()}>Add Roles</Button>
       </div>
     )
   }
