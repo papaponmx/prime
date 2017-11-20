@@ -8,7 +8,7 @@ export default class RolesList extends Component {
       </span>
     } else {
       return _.map(this.props.roles, role => {
-        return <li key={role.id}>{role.role}</li>
+        return <li key={role.id}>{role.name}</li>
       })
     }
 

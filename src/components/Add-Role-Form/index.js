@@ -14,6 +14,8 @@ const renderField = props => {
    )
 }
 
+// TODO: Add role description input to the form and to Redux.
+
 class AddRoleForm extends React.Component {  
   render() {
     return (
