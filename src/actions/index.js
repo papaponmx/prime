@@ -2,11 +2,10 @@ export const ADD_ROLE = 'add_role';
 export const DELETE_ROLE = 'delete_role';
 export const OPEN_MODAL = '';
 
-export function addRole(role) {
-console.log('inside of action. Role is: ', role);
+export function addRole(action) {
   return {
     type: ADD_ROLE,
-    payload: role
+    payload: action.payload.role,
   }
 }
 

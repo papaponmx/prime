@@ -1,32 +1,43 @@
+import { addRole } from '../../actions';
 import React from 'react'
-// import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import { Field, reduxForm, } from 'redux-form'
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 
-
-
 const renderField = props => {
+  // FIXME: When I use this function,  redux-form does not emmit the event, nor catches the input value.
   return (
-    <TextField placeholder="Daughter, student, boss, etc..."
+    <TextField name={props.name} placeholder="Daughter, student, boss, etc..."
     id={props.id}
     />
    )
 }
 
-class AddRoleForm extends React.Component {
-
+class AddRoleForm extends React.Component {  
   render() {
     return (
-      <form className="flex-col-start" >
+      <form className="flex-col-start" onSubmit={this.props.handleSubmit}>
         <label id="add-role-input">New Role</label>
-        <Field name="add-role-input" component={renderField} id="add-role-input"/>
-        <Button className="cta" label="Default">Default</Button>
+        <Field name="role" component="input" id="add-role-input"/>
+        <Button type="submit" className="cta">Add Role</Button>
       </form>
     )
   }
 }
 
-export default AddRoleForm = reduxForm({
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onSubmit: (values) => {
+      dispatch(addRole({payload: values}));
+    }
+
+  }
+}
+
+AddRoleForm = reduxForm({
   form: 'AddRoleForm',
 })(AddRoleForm);
+
+export default AddRoleForm = connect (null, mapDispatchToProps)(AddRoleForm);

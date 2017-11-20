@@ -9,12 +9,14 @@ export default (state = initialState, action) => {
   switch (action.type) {
 
     case ADD_ROLE:
+      const id = state.roles.length !== 0 ? state.roles.length + 1 : 1;
       return {
         ...state,
-        ...state.roles.concat(...state.roles, action.payload)
-
+        roles : state.roles.concat({
+          id,
+          name: action.payload,
+        })
       }
-      // FIXME: Roles are being set to state.roles.roles
       // TODO: Validate if the new role already extists
 
     case DELETE_ROLE:
