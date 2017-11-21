@@ -1,7 +1,9 @@
+import {addGoal }from '../../actions';
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
 import {Field, reduxForm, } from 'redux-form'
-import Button from 'material-ui/Button';
 import { reset } from 'redux-form';
+import Button from 'material-ui/Button';
 
 class AddGoalForm extends Component {
   render() {
@@ -17,15 +19,14 @@ class AddGoalForm extends Component {
 
 // TODO: Create added goal notification success or shit.
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         onSubmit: (values) => {
-//             dispatch(addGoal({ payload: values }));
-//             dispatch(reset('AddGoalForm'));
-//         }
-
-//     }
-// }
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onSubmit: (values) => {
+            dispatch(addGoal({ payload: values }));
+            dispatch(reset('AddGoalForm'));
+        }
+    }
+}
 
 AddGoalForm = reduxForm({
     form: 'AddGoalForm',
