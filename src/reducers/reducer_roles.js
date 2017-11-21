@@ -2,17 +2,18 @@ import { ADD_ROLE, DELETE_ROLE } from '../actions';
 import _ from 'lodash';
 
 const initialState = {
-  roles: []
+
+  list: [],
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
 
     case ADD_ROLE:
-      const id = state.roles.length !== 0 ? state.roles.length + 1 : 1;
+      const id = state.list.length !== 0 ? state.list.length + 1 : 1;
       return {
         ...state,
-        list : state.roles.concat({
+        list : state.list.concat({
           id,
           name: action.payload,
         })
