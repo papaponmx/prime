@@ -9,13 +9,13 @@ export default (state = initialState, action) => {
 
         case ADD_GOAL:
             const id = state.list.length !== 0 ? state.list.length + 1 : 1;
-            const goals = state.list.concat({
+            const list = state.list.concat({
                 id,
                 name: action.payload,
             })
             return {
                 ...state,
-                list: goals,
+               list,
             }
 
         default:
