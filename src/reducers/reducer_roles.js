@@ -12,7 +12,7 @@ export default (state = initialState, action) => {
       const id = state.roles.length !== 0 ? state.roles.length + 1 : 1;
       return {
         ...state,
-        roles : state.roles.concat({
+        list : state.roles.concat({
           id,
           name: action.payload,
         })
