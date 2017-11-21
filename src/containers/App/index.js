@@ -19,7 +19,7 @@ const App = () => (
         <Link to="/">Home</Link>
         <Link to="/about-us">About</Link>
         <Link to="/roles">Roles</Link>
-        <Link to="/roles/add">Add Role</Link>
+        <Link to="/goals">Goles</Link>
       </Typography>
       <IconButton color="contrast" aria-label="Menu">
         <MenuIcon />
