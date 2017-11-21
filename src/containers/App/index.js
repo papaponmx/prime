@@ -9,7 +9,8 @@ import React from 'react';
 import RolePage from '../Roles';
 import Typography from 'material-ui/Typography';
 import AddRolesPage from '../Add-Roles-Page';
-import AddGoalsPage from '../add-goals-Page';
+import AddGoalsPage from '../add-goals-page';
+import GoalsPage from '../goals-page';
 
 const App = () => (
   <div>
