@@ -9,6 +9,7 @@ import React from 'react';
 import RolePage from '../Roles';
 import Typography from 'material-ui/Typography';
 import AddRolesPage from '../Add-Roles-Page';
+import AddGoalsPage from '../add-goals-Page';
 
 const App = () => (
   <div>
@@ -27,6 +28,8 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/about-us" component={About} />
+        <Route exact path="/goals/add" component={AddGoalsPage} />
+        <Route exact path="/goals" component={GoalsPage} />
         <Route exact path="/roles/add" component={AddRolesPage} />
         <Route exact path="/roles" component={RolePage} />
       </Switch>
