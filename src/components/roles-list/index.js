@@ -11,7 +11,7 @@ export default class RolesList extends Component {
   render() {
     return (
       <ul className="roles-list">
-        { this.renderList() }
+        {this.props.roles ? this.renderList() : '' }
       </ul>);
     }
   }

@@ -6,14 +6,14 @@ import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 import { reset } from 'redux-form';
 
-const renderField = props => {
-  // FIXME: When I use this function,  redux-form does not emmit the event, nor catches the input value.
-  return (
-    <TextField name={props.name} placeholder="Daughter, student, boss, etc..."
-    id={props.id}
-    />
-   )
-}
+// const renderField = props => {
+//   // FIXME: When I use this function,  redux-form does not emmit the event, nor catches the input value.
+//   return (
+//     <TextField name={props.name} placeholder="Daughter, student, boss, etc..."
+//     id={props.id}
+//     />
+//    )
+// }
 
 // TODO: Add role description input to the form and to Redux.
 // TODO: Add validations;

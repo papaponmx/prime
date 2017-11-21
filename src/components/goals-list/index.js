@@ -11,7 +11,7 @@ export default class GoalsList extends Component {
     render() {
         return (
             <ul className="goals-list">
-                {this.renderList()}
+                {this.props.goals ? this.renderList() : ''}
             </ul>);
     }
 }
