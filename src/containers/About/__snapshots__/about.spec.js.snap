@@ -10,14 +10,3 @@ exports[`About Sould Render about page 1`] = `
   </p>
 </div>
 `;
-
-exports[`Home Sould do shit 1`] = `
-<div>
-  <h1>
-    About Page
-  </h1>
-  <p>
-    TODO: Create real content for this page.
-  </p>
-</div>
-`;

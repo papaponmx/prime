@@ -9,9 +9,9 @@ class GoalsPage extends Component {
   render() {
     return (
       <div>
-      <h1>Goals</h1>
-      <GoalsList goals={this.props.goals} />
-      <Button onClick={ () => this.props.changePage()}>Add Goal</Button>
+        <h1>Goals</h1>
+        <GoalsList goals={this.props.goals} />
+        <Button onClick={ () => this.props.changePage()}>Add Goal</Button>
       </div>
     )
   }
@@ -26,4 +26,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(GoalsPage);
-
