@@ -10,15 +10,20 @@ class AddGoalForm extends Component {
   render() {
     return (
         <form className="flex-col-start" onSubmit={this.props.handleSubmit}>
-            <label id="add-goal-input">New goal</label>
-            <Field name="goal" component="input" id="add-goal-input" />
-            <Button type="submit" className="cta">Add goal</Button>
-        </form>    
+          <label id="add-goal-input">New goal</label>
+          <Field name="goal" component="input" id="add-goal-input" />
+          <Button type="submit" className="cta">Add goal</Button>
+        </form>
     )
   }
 }
 
 // TODO: Create added goal notification success or shit.
+
+const mapStateToProps= state => ({
+
+});
+
 
 const mapDispatchToProps = (dispatch) => {
     return {

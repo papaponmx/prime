@@ -5,7 +5,7 @@ import React, { Component } from 'react'
 import GoalsList from '../../components/goals-list';
 import Button from 'material-ui/Button';
 
-class GoalsPage extends Component {
+export class GoalsPage extends Component {
   render() {
     return (
       <div>
