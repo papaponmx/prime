@@ -21,7 +21,7 @@ class AddGoalForm extends Component {
 // TODO: Create added goal notification success or shit.
 
 const mapStateToProps= state => ({
-
+  roles: state.roles,
 });
 
 
