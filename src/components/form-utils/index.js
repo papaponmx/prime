@@ -12,7 +12,7 @@ export function renderSelect( props ) {
     <div>
       <select { ...props.input } >
         <option />
-        {this.renderOptions(props.options)}
+        {renderOptions(props.options)}
       </select>
     </div>
     {(props.meta.touched && props.meta.error) ?
@@ -23,6 +23,7 @@ export function renderSelect( props ) {
 
 export function renderOptions(options) {
   return options.map((singleOption) => (
-    <option value={singleOption.id} key={singleOption.id}> {singleOption.name} {(singleOption.country && singleOption) ? `- ${singleOption.country.name}` : ''}</option>
+    <option value={singleOption.id} key={singleOption.id}>        {singleOption.name}
+    </option>
   ));
 }

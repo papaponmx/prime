@@ -1,23 +1,41 @@
 import React, { Component } from 'react'
+import { Field, reduxForm, reset} from 'redux-form'
 import { connect } from 'react-redux';
-
-import {Field, reduxForm, } from 'redux-form'
-import { reset } from 'redux-form';
-
+import { Link } from 'react-router-dom'
 import Button from 'material-ui/Button';
-import {addGoal }from '../../actions';
-import {renderSelect, renderOptions} from '../form-utils'; 
+
+import { addGoal }from '../../actions';
+import { renderSelect } from '../form-utils';
 
 class AddGoalForm extends Component {
   render() {
-    return (
-        <form className="flex-col-start" onSubmit={this.props.handleSubmit}>
-          <label id="add-goal-input">New goal</label>
-          <Field name="goal" component="input" id="add-goal-input" />
-          <Button type="submit" className="cta">Add goal</Button>
-        </form>
+    debugger;
+    if (this.props.roles.length === 0) {
+      return(
+        <div>
+          <p>Please start by adding some roles</p>
+          <Link to="/roles/add">
+            <Button>Add Roles</Button>
+          </Link>
+        </div>
     )
+  } else {
+    return (
+      <form className="flex-col-start" onSubmit={this.props.handleSubmit}>
+        <Field
+          id="select-role-input"
+          component={renderSelect}
+          options={this.props.roles}
+          label="Role"
+        />
+
+        <label id="add-goal-input">New goal</label>
+        <Field name="goal" component="input" id="add-goal-input" />
+        <Button type="submit" className="cta">Add goal</Button>
+      </form>
+    );
   }
+}
 }
 
 // TODO: Create added goal notification success or shit.
@@ -28,16 +46,17 @@ const mapStateToProps= state => ({
 
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        onSubmit: (values) => {
-            dispatch(addGoal({ payload: values }));
-            dispatch(reset('AddGoalForm'));
-        }
-    }
+  return {
+    onSubmit: (values) => {
+      dispatch(addGoal({ payload: values }));
+      dispatch(reset('AddGoalForm'));
+    },
+
+  }
 }
 
 AddGoalForm = reduxForm({
-    form: 'AddGoalForm',
+  form: 'AddGoalForm',
 })(AddGoalForm);
 
 export default AddGoalForm = connect(mapStateToProps, mapDispatchToProps) (AddGoalForm);
