@@ -17,7 +17,7 @@ export default (state = initialState, action) => {
   switch (action.type) {
 
     case ADD_ROLE:
-    const id = _.size(state) + 1;
+    const id = _.size(state);
     let newState = _.concat(state,{
       id,
       name: action.payload,

@@ -5,8 +5,7 @@ export const OPEN_MODAL = '';
 export const ADD_GOAL = 'ADD_GOAL';
 export const DELETE_GOAL = 'DELETE_GOAL';
 
-export const READ_FROM_LOCAL_STORAGE = 'READ_FROM_LOCAL_STORAGE'
-export const SAVE_FROM_LOCAL_STORAGE = 'SAVE_FROM_LOCAL_STORAGE'
+export const ADD_COLLAPSE = 'ADD_COLLAPSE';
 
 export function addRole(action) {
   return {
@@ -30,3 +29,8 @@ export const addGoal = (values) => {
     payload: values,
   }
 };
+
+export const addCollapse = (id) => ({
+  type: ADD_COLLAPSE,
+  payload: id,
+});
