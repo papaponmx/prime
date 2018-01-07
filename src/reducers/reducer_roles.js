@@ -5,7 +5,13 @@ import {
   DELETE_ROLE,
 } from '../actions';
 
-const initialState = [];
+let initialState = [];
+
+
+const roles = localStorage.getItem('roles');
+if (roles) {
+  initialState = JSON.parse(roles);
+}
 
 export default (state = initialState, action) => {
   switch (action.type) {
