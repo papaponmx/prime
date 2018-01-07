@@ -9,15 +9,14 @@ import { renderSelect } from '../form-utils';
 
 class AddGoalForm extends Component {
   render() {
-    debugger;
     if (this.props.roles.length === 0) {
       return(
         <div>
           <p>Please start by adding some roles</p>
           <Link to="/roles/add">
-            <Button>Add Roles</Button>
-          </Link>
-        </div>
+          <Button>Add Roles</Button>
+        </Link>
+      </div>
     )
   } else {
     return (
@@ -27,10 +26,15 @@ class AddGoalForm extends Component {
           component={renderSelect}
           options={this.props.roles}
           label="Role"
+          name="roleId"
         />
 
         <label id="add-goal-input">New goal</label>
-        <Field name="goal" component="input" id="add-goal-input" />
+        <Field
+          name="goal"
+          component="input"
+          id="add-goal-input"
+        />
         <Button type="submit" className="cta">Add goal</Button>
       </form>
     );
@@ -48,7 +52,7 @@ const mapStateToProps= state => ({
 const mapDispatchToProps = (dispatch) => {
   return {
     onSubmit: (values) => {
-      dispatch(addGoal({ payload: values }));
+      dispatch(addGoal(values));
       dispatch(reset('AddGoalForm'));
     },
 

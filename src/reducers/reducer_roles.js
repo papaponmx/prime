@@ -1,5 +1,9 @@
-import { ADD_ROLE, DELETE_ROLE } from '../actions';
 import _ from 'lodash';
+import {
+  ADD_GOAL,
+  ADD_ROLE,
+  DELETE_ROLE,
+} from '../actions';
 
 const initialState = [];
 
@@ -8,9 +12,10 @@ export default (state = initialState, action) => {
 
     case ADD_ROLE:
     const id = _.size(state) + 1;
-    const newState = _.concat(state,{
+    let newState = _.concat(state,{
       id,
       name: action.payload,
+      goals: []
     });
     localStorage.setItem('roles', JSON.stringify(newState));
     return newState;
@@ -22,6 +27,23 @@ export default (state = initialState, action) => {
       ...state,
       roles: newRoles
     }
+
+    case ADD_GOAL:
+    const roleSelected =  _.find(state, role => role.id === Number(action.payload.roleId));
+    const name = action.payload.goal
+    const goalId = _.size(roleSelected.list) + 1;
+    const goals = _.concat(roleSelected.goals, {
+      name,
+      id: goalId,
+    });
+    const roleWithNewGoal = {
+      ...roleSelected,
+      goals,
+    }
+    const oldState = _.reject(state, roleSelected);
+    newState = _.concat(oldState, roleWithNewGoal);
+    localStorage.setItem('roles', JSON.stringify(newState));
+    return newState;
     default:
     return state;
   }
