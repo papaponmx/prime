@@ -37,7 +37,7 @@ export default (state = initialState, action) => {
     case ADD_GOAL:
     const roleSelected =  _.find(state, role => role.id === Number(action.payload.roleId));
     const name = action.payload.goal
-    const goalId = _.size(roleSelected.list) + 1;
+    const goalId = `${_.size(roleSelected.list) + 1}G${action.payload.roleId}`;
     const goals = _.concat(roleSelected.goals, {
       name,
       id: goalId,

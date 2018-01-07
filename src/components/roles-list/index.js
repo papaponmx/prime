@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+
 import _ from 'lodash';
+
 import List, { ListItem, ListItemText } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import Collapse from 'material-ui/transitions/Collapse';
@@ -13,24 +16,22 @@ export default class RolesList extends Component {
     return _.map(this.props.roles, role => {
       return (
         [
-          <ListItem
+          <ListItem className="flex-col-start"
             key={role.id + 'B'}
           >
             <div className="flex-row-space-between">
-              {role.name}
+              <ListItemText primary={role.name} />
               <IconButton
-                onClick={this.handleExpandClick}
-                // aria-expanded={this.state.expanded}
                 aria-label="Show more"
               >
                 <ExpandMoreIcon />
               </IconButton>
             </div>
-                <Collapse>
-                  <GoalsList goals={role.goals} />
-                </Collapse>
-              </ListItem>,
-              <Divider key={role.id + 'A'} light />
+            <Collapse in={true} timeout="auto" unmountOnExit>
+              <GoalsList goals={role.goals} nested={true} />
+            </Collapse>
+          </ListItem>,
+          <Divider key={role.id + 'A'} />
             ]
           )
         });
