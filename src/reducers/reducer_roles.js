@@ -7,21 +7,23 @@ export default (state = initialState, action) => {
   switch (action.type) {
 
     case ADD_ROLE:
-      const id = _.size(state) + 1;
-      return _.concat(state,{
-          id,
-          name: action.payload,
-        });
-      // TODO: Validate if the new role already extists
+    const id = _.size(state) + 1;
+    const newState = _.concat(state,{
+      id,
+      name: action.payload,
+    });
+    localStorage.setItem('roles', JSON.stringify(newState));
+    return newState;
+    // TODO: Validate if the new role already extists
 
     case DELETE_ROLE:
-      const newRoles = _.omit(state.roles, action.payload);
-      return {
-        ...state,
-        roles: newRoles
-      }
+    const newRoles = _.omit(state.roles, action.payload);
+    return {
+      ...state,
+      roles: newRoles
+    }
     default:
-      return state;
+    return state;
   }
 
 }
