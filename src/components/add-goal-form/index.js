@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Field, reduxForm, reset} from 'redux-form'
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import Button from 'material-ui/Button';
 
 import { addGoal }from '../../actions';
@@ -14,8 +14,8 @@ class AddGoalForm extends Component {
         <div>
           <p>Please start by adding some roles</p>
           <Link to="/roles/add">
-          <Button>Add Roles</Button>
-        </Link>
+            <Button>Add Roles</Button>
+          </Link>
       </div>
     )
   } else {
