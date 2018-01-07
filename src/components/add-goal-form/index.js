@@ -35,6 +35,8 @@ class AddGoalForm extends Component {
           component="input"
           id="add-goal-input"
         />
+
+        {/* TODO: Add meta-data for goals, like: status = completed, dueDate, priority, etc. */}
         <Button type="submit" className="cta">Add goal</Button>
       </form>
     );

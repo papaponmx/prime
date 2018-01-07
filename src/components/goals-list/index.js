@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 export default class GoalsList extends Component {
     renderList() {
-        return _.map(this.props.goals.list, goal => {
+        return _.map(this.props.goals, goal => {
             return <li key={goal.id}>{goal.name}</li>
         })
     }
