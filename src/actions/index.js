@@ -24,9 +24,12 @@ export function deleteRole(role) {
 }
 
 
-export const addGoal = (action) => ({
+export const addGoal = (goal, role) => ({
   type: ADD_GOAL,
-  payload: action.payload.goal
+  payload: {
+    goal,
+    role,
+  }
 });
 
 export const readFromLocalStorage = (action) => ({
@@ -38,4 +41,3 @@ export const saveFromLocalStorage = (action) => ({
   type: SAVE_FROM_LOCAL_STORAGE,
   payload: action.payload,
 });
-

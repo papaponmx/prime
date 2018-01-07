@@ -1,3 +1,11 @@
+import React, { Component } from 'react';
+
+export const renderError =  (error) => {
+  return (<div className="form-text-error">
+    { error }
+  </div>);
+}
+
 export function renderSelect( props ) {
   return  (<div>
     <label htmlFor={props.id} >{ props.label}:</label>

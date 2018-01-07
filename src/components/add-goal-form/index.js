@@ -1,10 +1,12 @@
-
-import {addGoal }from '../../actions';
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
+
 import {Field, reduxForm, } from 'redux-form'
 import { reset } from 'redux-form';
+
 import Button from 'material-ui/Button';
+import {addGoal }from '../../actions';
+import {renderSelect, renderOptions} from '../form-utils'; 
 
 class AddGoalForm extends Component {
   render() {
@@ -38,4 +40,4 @@ AddGoalForm = reduxForm({
     form: 'AddGoalForm',
 })(AddGoalForm);
 
-export default AddGoalForm = connect (null, mapDispatchToProps) (AddGoalForm);
+export default AddGoalForm = connect(mapStateToProps, mapDispatchToProps) (AddGoalForm);

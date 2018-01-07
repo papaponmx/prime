@@ -2,7 +2,7 @@ import { addRole } from '../../actions';
 import React from 'react'
 import { connect } from 'react-redux';
 import { Field, reduxForm, } from 'redux-form'
-import TextField from 'material-ui/TextField';
+// import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 import { reset } from 'redux-form';
 
@@ -18,7 +18,7 @@ import { reset } from 'redux-form';
 // TODO: Add role description input to the form and to Redux.
 // TODO: Add validations;
 
-class AddRoleForm extends React.Component {  
+class AddRoleForm extends React.Component {
   render() {
     return (
       <form className="flex-col-start" onSubmit={this.props.handleSubmit}>
