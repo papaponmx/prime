@@ -27,11 +27,11 @@ renderList() {
           key={role.id + 'B' + role}>
           <div className="flex-row-space-between">
             <ListItemText primary={role.name} />
-            <IconButton aria-label="Show more">
+            <IconButton onClick={ () => this.props.toggle(role.id)} aria-label="Show more">
               <ExpandMoreIcon />
             </IconButton>
           </div>
-          <Collapse in={true} timeout="auto" unmountOnExit>
+          <Collapse in={false} timeout="auto" unmountOnExit>
             <GoalsList goals={role.goals} nested={true} />
           </Collapse>
         </ListItem>,

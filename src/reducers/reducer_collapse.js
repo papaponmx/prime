@@ -1,4 +1,4 @@
-import { ADD_COLLAPSE } from '../actions';
+import { ADD_COLLAPSE, TOGGLE_COLLAPSE } from '../actions';
 
 export default (state = { }, action) => {
 switch (action.type) {
@@ -8,6 +8,15 @@ case ADD_COLLAPSE:
   return {
     ...state,
     [id]: false,
+  }
+
+case TOGGLE_COLLAPSE:
+const idToUpdate = action.payload;
+const idUpdated = !state[idToUpdate];
+debugger;
+  return {
+    ...state,
+    [idToUpdate]: idUpdated,
   }
 
 default:
