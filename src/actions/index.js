@@ -6,6 +6,7 @@ export const ADD_GOAL = 'ADD_GOAL';
 export const DELETE_GOAL = 'DELETE_GOAL';
 
 export const ADD_COLLAPSE = 'ADD_COLLAPSE';
+export const TOGGLE_COLLAPSE = 'TOGGLE_COLLAPSE';
 
 export function addRole(action) {
   return {
@@ -33,4 +34,9 @@ export const addGoal = (values) => {
 export const addCollapse = (id) => ({
   type: ADD_COLLAPSE,
   payload: id,
+});
+
+export const toggleCollapse = (id) => ({
+  type: TOGGLE_COLLAPSE,
+  payload: id
 });

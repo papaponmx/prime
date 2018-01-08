@@ -4,7 +4,6 @@ export default (state = { }, action) => {
 switch (action.type) {
 
 case ADD_COLLAPSE:
-  debugger
   const id = action.payload;
   return {
     ...state,

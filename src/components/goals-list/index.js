@@ -6,11 +6,11 @@ export default class GoalsList extends Component {
   renderList() {
     return _.map(this.props.goals, goal => {
       return(
-        <ListItem key={goal.id} className="flex-row-space-between goal-single">
+        <ListItem key={goal.id + goal.name} className="flex-row-space-between goal-single">
           <ListItemText primary={goal.name} />
         </ListItem>
-      )
-    })
+      );
+    });
   }
 
   render() {
