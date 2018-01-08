@@ -14,38 +14,40 @@ import { addCollapse, toggleCollapse } from '../../actions';
 
 class RolesList extends Component {
   componentWillMount() {
-    _.forEach(this.props.roles, role =>       this.props.registerCollapse(role.id));
-  }
-
-  renderList() {
-    return _.map(this.props.roles, role => {
-      return (
-        [
-          <ListItem className="flex-col-start"
-            key={role.id + 'B' + role.name}>
-            <div className="flex-row-space-between">
-              <ListItemText primary={role.name} />
-              <IconButton aria-label="Show more">
-                <ExpandMoreIcon />
-              </IconButton>
-            </div>
-            <Collapse in={true} timeout="auto" unmountOnExit>
-              <GoalsList goals={role.goals} nested={true} />
-            </Collapse>
-          </ListItem>,
-          <Divider key={role.id + role.name + 'A'} />
-        ]
-      )
-    });
-  }
-
-  render() {
-    return (
-      <List className="roles-list">
-        {this.props.roles ? this.renderList() : '' }
-      </List>);
+    for (let role of this.props.roles) {
+      this.props.registerCollapse(role.id)
     }
   }
+
+renderList() {
+  return _.map(this.props.roles, role => {
+    return (
+      [
+        <ListItem className="flex-col-start"
+          key={role.id + 'B' + role}>
+          <div className="flex-row-space-between">
+            <ListItemText primary={role.name} />
+            <IconButton aria-label="Show more">
+              <ExpandMoreIcon />
+            </IconButton>
+          </div>
+          <Collapse in={true} timeout="auto" unmountOnExit>
+            <GoalsList goals={role.goals} nested={true} />
+          </Collapse>
+        </ListItem>,
+        <Divider key={role.id + role.name + 'A'} />
+      ]
+    )
+  });
+}
+
+render() {
+  return (
+    <List className="roles-list">
+      {this.props.roles ? this.renderList() : '' }
+    </List>);
+  }
+}
 
 const mapStateToProps= state => ({
   collapses: state.collapses,
@@ -53,9 +55,9 @@ const mapStateToProps= state => ({
 
 
 const mapDispatchToProps = {
-  registerCollapse: () => addCollapse(),
-  toggle: () => toggleCollapse(),
+  registerCollapse: (id) => addCollapse(id),
+  toggle: (id) => toggleCollapse(id),
 
 }
 
-  export default connect(mapStateToProps, mapDispatchToProps)(RolesList);
+export default connect(mapStateToProps, mapDispatchToProps)(RolesList);
