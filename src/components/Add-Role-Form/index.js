@@ -18,7 +18,6 @@ const renderField = ({  input,  label,  type,  meta: { touched, error, }}) => {
         id="required"
         label={error}
         margin="normal"
-        error
       />
     );
   }
