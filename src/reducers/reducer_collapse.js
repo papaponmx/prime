@@ -13,7 +13,6 @@ case ADD_COLLAPSE:
 case TOGGLE_COLLAPSE:
 const idToUpdate = action.payload;
 const idUpdated = !state[idToUpdate];
-debugger;
   return {
     ...state,
     [idToUpdate]: idUpdated,

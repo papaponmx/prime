@@ -31,7 +31,7 @@ renderList() {
               <ExpandMoreIcon />
             </IconButton>
           </div>
-          <Collapse in={false} timeout="auto" unmountOnExit>
+          <Collapse in={this.props.collapses[role.id]} timeout="auto" unmountOnExit>
             <GoalsList goals={role.goals} nested={true} />
           </Collapse>
         </ListItem>,
