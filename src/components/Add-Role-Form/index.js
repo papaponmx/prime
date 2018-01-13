@@ -6,8 +6,7 @@ import React from 'react';
 import Button from 'material-ui/Button';
 import TextField from 'material-ui/TextField';
 
-import { addRole, openSnackbar, closeSnackbar } from '../../actions';
-import Snackbar from 'material-ui/Snackbar';
+import { addRole, openSnackbar, } from '../../actions';
 
 // TODO: Migrate render TextField to another component
 // TODO: Add role description as an optional parameter;
@@ -61,13 +60,6 @@ class AddRoleForm extends React.Component {
         /> */}
 
         <Button type="submit" className="cta">Add Role</Button>
-
-        <Snackbar
-          open={false}
-          message="{this.props.snackbar.message}"
-          autoHideDuration={4000}
-          onRequestClose={this.props.closeSnack}
-        />
       </form>
     )
   }
@@ -85,26 +77,18 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onSubmit: (values) => {
       dispatch(reset('AddRoleForm'));
-      dispatch(openSnackbar({
-      message: `Added your role as a ${values.role}`,
-      }));
       dispatch(addRole(values));
+      dispatch(openSnackbar({
+        message: `Added your role as a ${values.role}`,
+      }));
     },
-    closeSnack: dispatch(closeSnackbar()),
 
   }
 }
-
-const mapStateToProps= state => ({
-  snackbar: state.snackbar,
-});
 
 AddRoleForm = reduxForm({
   form: 'AddRoleForm',
   validate,
 
 })(AddRoleForm);
-
-
-// FIXME: Roles are not being added properly.
-export default AddRoleForm = connect (mapStateToProps, mapDispatchToProps)(AddRoleForm);
+export default AddRoleForm = connect (null, mapDispatchToProps)(AddRoleForm);
