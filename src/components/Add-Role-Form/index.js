@@ -9,7 +9,12 @@ import TextField from 'material-ui/TextField';
 // TODO: Migrate render TextField to another component
 // TODO: Add role description as an optional parameter;
 
-const renderField = ({  input,  label,  type,  meta: { touched, error, }}) => {
+const renderField = ({
+  input,
+  label,
+  type,
+  meta: { touched, error, }
+}) => {
   if (touched && error) {
     return (
       <TextField
@@ -18,6 +23,7 @@ const renderField = ({  input,  label,  type,  meta: { touched, error, }}) => {
         id="required"
         label={error}
         margin="normal"
+        {...input}
       />
     );
   }
@@ -26,8 +32,8 @@ const renderField = ({  input,  label,  type,  meta: { touched, error, }}) => {
     <TextField
       required
       id="required"
-      label={label}
       margin="normal"
+      {...input}
     />
   )
 }
@@ -42,7 +48,6 @@ class AddRoleForm extends React.Component {
           component={renderField}
           id="add-role-input"
           label="Add Role"
-
         />
         {/* <Field
           name="role"
@@ -58,18 +63,19 @@ class AddRoleForm extends React.Component {
   }
 }
 
-const validate = values => {
+const validate = (values) => {
   const errors= {};
-  if (!values.role)
-  errors.role = `Role can't be empty`;
+  if (!values.role) {
+    errors.role = `Role can't be empty`;
+  }
   return errors;
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     onSubmit: (values) => {
-      dispatch(addRole({payload: values}));
       dispatch(reset('AddRoleForm'));
+      return dispatch(addRole(values));
     }
 
   }
@@ -78,6 +84,9 @@ const mapDispatchToProps = (dispatch) => {
 AddRoleForm = reduxForm({
   form: 'AddRoleForm',
   validate,
+
 })(AddRoleForm);
 
+
+// FIXME: Roles are not being added properly.
 export default AddRoleForm = connect (null, mapDispatchToProps)(AddRoleForm);

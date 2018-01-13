@@ -8,10 +8,10 @@ export const DELETE_GOAL = 'DELETE_GOAL';
 export const ADD_COLLAPSE = 'ADD_COLLAPSE';
 export const TOGGLE_COLLAPSE = 'TOGGLE_COLLAPSE';
 
-export function addRole(action) {
+export function addRole(values) {
   return {
     type: ADD_ROLE,
-    payload: action.payload.role,
+    payload: values,
     goals: []
   }
 }

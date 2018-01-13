@@ -20,7 +20,7 @@ export default (state = initialState, action) => {
     const id = _.size(state) + 1;
     let newState = _.concat(state,{
       id,
-      name: action.payload,
+      name: action.payload.role,
       goals: []
     });
     localStorage.setItem('roles', JSON.stringify(newState));
