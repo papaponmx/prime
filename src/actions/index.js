@@ -8,6 +8,9 @@ export const DELETE_GOAL = 'DELETE_GOAL';
 export const ADD_COLLAPSE = 'ADD_COLLAPSE';
 export const TOGGLE_COLLAPSE = 'TOGGLE_COLLAPSE';
 
+export const OPEN_SNACKBAR = 'OPEN_SNACKBAR';
+export const CLOSE_SNACKBAR = 'CLOSE_SNACKBAR';
+
 export function addRole(values) {
   return {
     type: ADD_ROLE,
@@ -39,4 +42,13 @@ export const addCollapse = (id) => ({
 export const toggleCollapse = (id) => ({
   type: TOGGLE_COLLAPSE,
   payload: id
+});
+
+export const openSnackbar = (message) => ({
+  type: OPEN_SNACKBAR,
+  payload: message,
+});
+
+export const closeSnackbar = () => ({
+  type: CLOSE_SNACKBAR,
 });

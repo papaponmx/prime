@@ -3,9 +3,16 @@ import {
   ADD_GOAL,
   ADD_ROLE,
   DELETE_ROLE,
+  OPEN_SNACKBAR,
+  CLOSE_SNACKBAR,
 } from '../actions';
 
-let initialState = [];
+let initialState = {
+  snackbar: {
+    message: 'Initial State',
+    open: false,
+  }
+};
 
 
 const roles = localStorage.getItem('roles');
@@ -50,8 +57,27 @@ export default (state = initialState, action) => {
     newState = _.concat(oldState, roleWithNewGoal);
     localStorage.setItem('roles', JSON.stringify(newState));
     return newState;
-    default:
-    return state;
-  }
+
+    case OPEN_SNACKBAR:
+    return {
+      ...state,
+      snackbar: {
+        open: true,
+        message: action.payload.message,
+
+      }
+    }
+    case CLOSE_SNACKBAR:
+    return {
+      ...state,
+      snackbar: {
+        open: false,
+        message: '',
+      }
+    }
+
+  default:
+  return state;
+}
 
 }
