@@ -24,10 +24,10 @@ renderList() {
     return (
       [
         <ListItem className="flex-col-start"
-          key={role.id + 'B' + role}>
+          key={role.id + 'B' + role} onClick={ () => this.props.toggle(role.id)}>
           <div className="flex-row-space-between">
             <ListItemText primary={role.name} />
-            <IconButton onClick={ () => this.props.toggle(role.id)} aria-label="Show more">
+            <IconButton aria-label="Show more">
               <ExpandMoreIcon />
             </IconButton>
           </div>
