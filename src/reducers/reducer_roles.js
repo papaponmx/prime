@@ -31,18 +31,16 @@ export default (state = initialState, action) => {
         name: action.payload.role,
         goals: [],
     };
+    let list = [...state.list, newItem];
+    list = _.uniqBy(list, 'name');
+
     let newState = {
       ...state,
-      list: [...state.list, newItem],
+      list,
     }
 
-    // _.concat(state.list,{
-    //   id,
-    //   name: action.payload.role,
-    // });
     localStorage.setItem('roles', JSON.stringify(newState));
     return newState;
-    // TODO: Validate if the new role already extists
 
     case DELETE_ROLE:
     const newRoles = _.omit(state.list, action.payload);
