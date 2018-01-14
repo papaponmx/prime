@@ -11,7 +11,7 @@ import { themeStyle } from '../../styles/buttonStyles';
 
 class AddGoalForm extends Component {
   render() {
-    if (this.props.roles.length === 0) {
+    if (!this.props.roles) {
       return(
         <div>
           <p>Please start by adding some roles</p>
@@ -49,7 +49,7 @@ class AddGoalForm extends Component {
 // TODO: Create added goal notification success or shit.
 
 const mapStateToProps= state => ({
-  roles: state.roles,
+  roles: state.roles.list,
 });
 
 
