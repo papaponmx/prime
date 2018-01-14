@@ -46,7 +46,7 @@ class RolesList extends Component {
   render() {
     return (
       <List className="roles-list">
-        {this.props.roles ? '' : this.renderList() }
+        {this.props.roles ? this.renderList(): 'Please start by adding some roles' }
       </List>);
     }
   }
