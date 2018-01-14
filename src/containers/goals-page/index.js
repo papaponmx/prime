@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-// import GoalsList from '../../components/goals-list';
+import GoalsList from '../../components/goals-list';
 import Button from 'material-ui/Button';
+import { themeStyle } from '../../styles/buttonStyles';
+
 
 export class GoalsPage extends Component {
   render() {
@@ -10,8 +12,9 @@ export class GoalsPage extends Component {
       <div>
         <h1>Goals</h1>
         {/* TODO: Add List with all goals */}
+        <GoalsList />
         <Link to="/goals/add">
-          <Button>Add Goals</Button>
+          <Button style={themeStyle}>Add new goal</Button>
         </Link>
       </div>
     )

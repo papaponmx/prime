@@ -11,7 +11,8 @@ let initialState = {
   snackbar: {
     message: 'Initial State',
     open: false,
-  }
+  },
+  list: [],
 };
 
 
@@ -24,25 +25,34 @@ export default (state = initialState, action) => {
   switch (action.type) {
 
     case ADD_ROLE:
-    const id = _.size(state) + 1;
-    let newState = _.concat(state,{
-      id,
-      name: action.payload.role,
-      goals: []
-    });
+    const id = _.size(state.list) + 1;
+    const newItem =  {
+        id,
+        name: action.payload.role,
+        goals: [],
+    };
+    let newState = {
+      ...state,
+      list: [...state.list, newItem],
+    }
+
+    // _.concat(state.list,{
+    //   id,
+    //   name: action.payload.role,
+    // });
     localStorage.setItem('roles', JSON.stringify(newState));
     return newState;
     // TODO: Validate if the new role already extists
 
     case DELETE_ROLE:
-    const newRoles = _.omit(state.roles, action.payload);
+    const newRoles = _.omit(state.list, action.payload);
     return {
       ...state,
       roles: newRoles
     }
 
     case ADD_GOAL:
-    const roleSelected =  _.find(state, role => role.id === Number(action.payload.roleId));
+    const roleSelected =  _.find(state.list, role => role.id === Number(action.payload.roleId));
     const name = action.payload.goal
     const goalId = `${_.size(roleSelected.list) + 1}G${action.payload.roleId}`;
     const goals = _.concat(roleSelected.goals, {

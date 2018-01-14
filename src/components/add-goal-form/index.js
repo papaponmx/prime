@@ -7,6 +7,8 @@ import Button from 'material-ui/Button';
 import { addGoal }from '../../actions';
 import { renderSelect } from '../form-utils';
 
+import { themeStyle } from '../../styles/buttonStyles';
+
 class AddGoalForm extends Component {
   render() {
     if (this.props.roles.length === 0) {
@@ -14,7 +16,7 @@ class AddGoalForm extends Component {
         <div>
           <p>Please start by adding some roles</p>
           <Link to="/roles/add">
-            <Button>Add Roles</Button>
+            <Button style={themeStyle}>Add Roles</Button>
           </Link>
       </div>
     )

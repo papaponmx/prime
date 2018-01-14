@@ -5,7 +5,7 @@ import React from 'react';
 import RolesList from '../../components/roles-list';
 import '../../reducers';
 import Button from 'material-ui/Button';
-// import Dialog from 'material-ui/Dialog';
+import {themeStyle} from '../../styles/buttonStyles';
 
 class RolePage extends React.Component {
   render() {
@@ -13,7 +13,7 @@ class RolePage extends React.Component {
       <div>
         <h1>Roles</h1>
         <RolesList roles={this.props.roles} />
-        <Button onClick={() => this.props.changePage()}>Add Roles</Button>
+        <Button style={themeStyle} onClick={() => this.props.changePage()}>Add Roles</Button>
       </div>
     )
   }

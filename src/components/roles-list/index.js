@@ -14,50 +14,53 @@ import { addCollapse, toggleCollapse } from '../../actions';
 
 class RolesList extends Component {
   componentWillMount() {
-    for (let role of this.props.roles) {
-      this.props.registerCollapse(role.id)
+    if (this.props.roles){
+      for (let role of this.props.roles) {
+        this.props.registerCollapse(role.id)
+      }
     }
   }
 
-renderList() {
-  return _.map(this.props.roles, role => {
-    return (
-      [
-        <ListItem className="flex-col-start"
-          key={role.id + 'B' + role} onClick={ () => this.props.toggle(role.id)}>
-          <div className="flex-row-space-between">
-            <ListItemText primary={role.name} />
-            <IconButton aria-label="Show more">
-              <ExpandMoreIcon />
-            </IconButton>
-          </div>
-          <Collapse in={this.props.collapses[role.id]} timeout="auto" unmountOnExit>
-            <GoalsList goals={role.goals} nested={true} />
-          </Collapse>
-        </ListItem>,
-        <Divider key={role.id + role.name + 'A'} />
-      ]
-    )
-  });
-}
-
-render() {
-  return (
-    <List className="roles-list">
-      {this.props.roles ? this.renderList() : '' }
-    </List>);
+  renderList() {
+    return _.map(this.props.roles, role => {
+      return (
+        [
+          <ListItem className="flex-col-start"
+            key={role.id + 'B' + role} onClick={ () => this.props.toggle(role.id)}>
+            <div className="flex-row-space-between">
+              <ListItemText primary={role.name} />
+              <IconButton aria-label="Show more">
+                <ExpandMoreIcon />
+              </IconButton>
+            </div>
+            <Collapse in={this.props.collapses[role.id]} timeout="auto" unmountOnExit>
+              <GoalsList goals={role.goals} nested={true} />
+            </Collapse>
+          </ListItem>,
+          <Divider key={role.id + role.name + 'A'} />
+        ]
+      )
+    });
   }
-}
 
-const mapStateToProps= state => ({
-  collapses: state.collapses,
-});
+  render() {
+    return (
+      <List className="roles-list">
+        {this.props.roles ? '' : this.renderList() }
+      </List>);
+    }
+  }
+
+  const mapStateToProps= state => ({
+    roles: state.roles.list,
+    collapses: state.collapses,
+  });
 
 
-const mapDispatchToProps = {
-  registerCollapse: (id) => addCollapse(id),
-  toggle: (id) => toggleCollapse(id),
+  const mapDispatchToProps = {
+    registerCollapse: (id) => addCollapse(id),
+    toggle: (id) => toggleCollapse(id),
 
-}
+  }
 
-export default connect(mapStateToProps, mapDispatchToProps)(RolesList);
+  export default connect(mapStateToProps, mapDispatchToProps)(RolesList);
