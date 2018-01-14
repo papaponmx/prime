@@ -1,30 +1,26 @@
 import { Route, Link, Switch } from 'react-router-dom';
-// import { withStyles } from 'material-ui/styles';
-import About from '../About';
-import AppBar from 'material-ui/AppBar';
-import Home from '../Home';
-import IconButton from 'material-ui/IconButton';
-import MenuIcon from 'material-ui-icons/Menu';
 import React from 'react';
-import RolePage from '../Roles';
-import Typography from 'material-ui/Typography';
+// import { withStyles } from 'material-ui/styles';
+import AppBar from 'material-ui/AppBar';
+import About from '../About';
+import Home from '../Home';
 import AddRolesPage from '../Add-Roles-Page';
 import AddGoalsPage from '../add-goals-page';
 import GoalsPage from '../goals-page';
+import RolePage from '../Roles';
+
+import ic_home_white_24px from '../../icons/ic_apps_black_24px.svg';
+import ic_face_black_24px from '../../icons/ic_face_black_24px.svg';
+import ic_grade_black_24px from '../../icons/ic_grade_black_24px.svg';
 
 const App = () => (
   <div>
-    <AppBar>
-      <Typography>
-        <Link to="/">Home</Link>
-        <Link to="/about-us">About</Link>
-        <Link to="/roles">Roles</Link>
-        <Link to="/goals">Goals</Link>
-      </Typography>
-      <IconButton color="contrast" aria-label="Menu">
-        <MenuIcon />
-      </IconButton>
-    </AppBar>
+    <AppBar id="app-navigation">
+      <Link to="/"><img src={ic_home_white_24px} alt="home icon" /></Link>
+        {/* <Link to="/about-us">About</Link> TODO: Find a place to put this link */}
+        <Link to="/roles"><img src={ic_face_black_24px} alt="roles icon" /></Link>
+        <Link to="/goals"><img src={ic_grade_black_24px} alt="goals icon" /></Link>
+      </AppBar>
     <main>
       <Switch>
         <Route exact path="/" component={Home} />
