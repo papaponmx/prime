@@ -18,7 +18,6 @@ let initialState = {
 
 const roles = localStorage.getItem('roles');
 if (roles) {
-  debugger;
   initialState = JSON.parse(roles);
 }
 
@@ -46,7 +45,6 @@ export default (state = initialState, action) => {
     const roleSelected =  _.findIndex(state.list, role => role.id === Number(action.payload.roleId));
     const name = action.payload.goal;
     const goalId = `${_.size(roleSelected.list) + 1}G${action.payload.roleId}`;
-    debugger;
     list = [ {
       ...state.list[roleSelected],
       goals: [

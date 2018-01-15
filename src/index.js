@@ -6,6 +6,7 @@ import store, { history } from './store';
 import App from './containers/App';
 import './index.css';
 import 'typeface-roboto';
+import registerServiceWorker from './registerServiceWorker';
 
 const target = document.querySelector('#root');
 
@@ -19,3 +20,5 @@ render(
   </Provider>,
   target
 );
+
+registerServiceWorker();
