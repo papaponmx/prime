@@ -26,7 +26,7 @@ export default (state = initialState, action) => {
 
     case ADD_ROLE:
     const newItem =  {
-      id: _.size(state) + 1,
+      id: new Date().valueOf(),
       name: action.payload.role,
       goals: [],
     };
