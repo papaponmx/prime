@@ -42,13 +42,13 @@ export default (state = initialState, action) => {
     return newState;
 
     case ADD_GOAL:
-    const roleSelected =  _.findIndex(state.list, role => role.id === Number(action.payload.roleId));
+    const roleSelected =  Array.filter(state.list, role => role.id === Number(action.payload.roleId));
     const name = action.payload.goal;
-    const goalId = `${_.size(roleSelected.list) + 1}G${action.payload.roleId}`;
+    const goalId = `${_.size(roleSelected[0].list) + 1}G${action.payload.roleId}`;
     list = [ {
-      ...state.list[roleSelected],
+      ...state.list[roleSelected[0]],
       goals: [
-        ...state.list[roleSelected].goals,
+        ...state.list[roleSelected[0]].goals,
         {
           name,
           id: goalId,
