@@ -19,10 +19,10 @@ const App = () => (
   <div>
     <AppBar id="app-navigation">
       <Link to="/"><img src={ic_home_white_24px} alt="home icon" /></Link>
-        {/* <Link to="/about-us">About</Link> TODO: Find a place to put this link */}
-        <Link to="/roles"><img src={ic_face_black_24px} alt="roles icon" /></Link>
-        <Link to="/goals"><img src={ic_grade_black_24px} alt="goals icon" /></Link>
-      </AppBar>
+      {/* <Link to="/about-us">About</Link> TODO: Find a place to put this link */}
+      <Link to="/roles"><img src={ic_face_black_24px} alt="roles icon" /></Link>
+      <Link to="/goals"><img src={ic_grade_black_24px} alt="goals icon" /></Link>
+    </AppBar>
     <main>
       <Switch>
         <Route exact path="/" component={Home} />
