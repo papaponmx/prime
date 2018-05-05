@@ -2,21 +2,22 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
 import rootReducer from './reducers';
+import * as firebase from 'firebase';
 
-import firebase from 'firebase';
-import { firebase as fbConfig, reduxFirebase as reduxConfig } from './settings/firebase';
+import firebaseConfig from './settings/firebase';
 import mySaga from './sagas';
 import createSagaMiddleware from 'redux-saga';
 
-
 export const history = createHistory();
 const initialState = {};
+
 const enhancers = [];
-const sagaMiddleware = createSagaMiddleware();
+
+const sagaMiddleware = createSagaMiddleware()
 
 const middleware = [
   routerMiddleware(history),
-  sagaMiddleware.run(mySaga),
+  sagaMiddleware,
 ];
 
 
@@ -38,5 +39,8 @@ const store = createStore(
   initialState,
   composedEnhancers,
 );
+
+sagaMiddleware.run(mySaga);
+firebase.initializeApp(firebaseConfig);
 
 export default store;
