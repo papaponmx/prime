@@ -40,7 +40,7 @@
       "error",
       {
         "singleQuote": true,
-        "trailingComma": "es6",
+        "trailingComma": "all",
         "semi": false,
         "bracketSpacing": true,
         "jsxBracketSameLine": true,
