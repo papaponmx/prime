@@ -1,12 +1,9 @@
 import { takeEvery } from 'redux-saga/effects'
+import { SIGNUP_USER } from '../actions/types'
+import { signupSaga } from './signup'
 
-// worker Saga: will be fired on USER_FETCH_REQUESTED actions
-function* fetchUser(action) {
-  yield console.log('waddup')
+function* watcherSaga() {
+  yield takeEvery(SIGNUP_USER, signupSaga)
 }
 
-function* mySaga() {
-  yield takeEvery('USER_FETCH_REQUESTED', fetchUser)
-}
-
-export default mySaga
+export default watcherSaga;

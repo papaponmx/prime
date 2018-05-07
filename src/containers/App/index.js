@@ -25,7 +25,6 @@ const App = () => (
     </AppBar>
     <main>
       <Switch>
-        <Route exact path="/" component={Home} />
         <Route exact path="/about-us" component={About} />
         <Route exact path="/goals/add" component={AddGoalsPage} />
         <Route exact path="/goals" component={GoalsPage} />
@@ -33,6 +32,7 @@ const App = () => (
         <Route exact path="/roles" component={RolePage} />
         <Route exact path="/signin" component={SigninPage} />
         <Route exact path="/signup" component={SignupPage} />
+        <Route exact path="/" component={Home} />
       </Switch>
     </main>
   </div>

@@ -15,36 +15,35 @@ export function addRole(values) {
   return {
     type: ADD_ROLE,
     payload: values,
-    goals: []
+    goals: [],
   }
 }
 
 export function deleteRole(role) {
   return {
-    type : DELETE_ROLE,
-    payload: role
+    type: DELETE_ROLE,
+    payload: role,
   }
 }
 
-
-export const addGoal = (values) => {
+export const addGoal = values => {
   return {
     type: ADD_GOAL,
     payload: values,
   }
 };
 
-export const addCollapse = (id) => ({
+export const addCollapse = id => ({
   type: ADD_COLLAPSE,
   payload: id,
 });
 
-export const toggleCollapse = (id) => ({
+export const toggleCollapse = id => ({
   type: TOGGLE_COLLAPSE,
-  payload: id
+  payload: id,
 });
 
-export const openSnackbar = (message) => ({
+export const openSnackbar = message => ({
   type: OPEN_SNACKBAR,
   payload: message,
 });
@@ -52,3 +51,5 @@ export const openSnackbar = (message) => ({
 export const closeSnackbar = () => ({
   type: CLOSE_SNACKBAR,
 });
+
+export { signupUser } from './auth';

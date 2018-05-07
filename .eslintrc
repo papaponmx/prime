@@ -41,7 +41,7 @@
       {
         "singleQuote": true,
         "trailingComma": "all",
-        "semi": false,
+        "semi": true,
         "bracketSpacing": true,
         "jsxBracketSameLine": true,
         "printWidth": 80,

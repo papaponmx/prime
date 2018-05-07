@@ -5,8 +5,9 @@ import rootReducer from './reducers';
 import * as firebase from 'firebase';
 
 import firebaseConfig from './settings/firebase';
-import mySaga from './sagas';
+import watcherSaga from './sagas';
 import createSagaMiddleware from 'redux-saga';
+import { getFirebase } from 'react-redux-firebase';
 
 export const history = createHistory();
 const initialState = {};
@@ -40,7 +41,11 @@ const store = createStore(
   composedEnhancers,
 );
 
-sagaMiddleware.run(mySaga);
-firebase.initializeApp(firebaseConfig);
+sagaMiddleware.run(watcherSaga, getFirebase);
+export const firebaseInstance = firebase.initializeApp(firebaseConfig);
+
+export const provider = new firebase.auth.GoogleAuthProvider();
+export const auth = firebase.auth();
+
 
 export default store;
