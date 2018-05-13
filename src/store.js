@@ -41,8 +41,8 @@ const store = createStore(
   composedEnhancers,
 );
 
+firebase.initializeApp(firebaseConfig);
 sagaMiddleware.run(watcherSaga, getFirebase);
-export const firebaseInstance = firebase.initializeApp(firebaseConfig);
 
 export const provider = new firebase.auth.GoogleAuthProvider();
 export const auth = firebase.auth();
