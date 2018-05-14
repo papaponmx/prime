@@ -1,24 +1,33 @@
-export function* signupSaga() {
-  yield console.log('You are in the right saga');
+import * as firebase from 'firebase';
+import { provider, auth } from '../store';
+import { put } from 'redux-saga/effects';
 
-  // firebase
-  //   .auth()
-  //   .signInWithPopup(provider)
-  //   .then(function(result) {
-  //     // This gives you a Google Access Token. You can use it to access the Google API.
-  //     var token = result.credential.accessToken;
-  //     // The signed-in user info.
-  //     var user = result.user;
-  //     // ...
-  //   })
-  //   .catch(function(error) {
-  //     // Handle Errors here.
-  //     var errorCode = error.code;
-  //     var errorMessage = error.message;
-  //     // The email of the user's account used.
-  //     var email = error.email;
-  //     // The firebase.auth.AuthCredential type that was used.
-  //     var credential = error.credential;
-  //     // ...
-  //   })
+export function* signupSaga() {
+  let token, user;
+
+  yield firebase
+    .auth()
+    .signInWithPopup(provider)
+    .then(result => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      console.log('DQTP: Result is ', result)
+      token = result.credential.accessToken;
+      user = result.user;
+    })
+    .catch(error => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      const email = error.email;
+      const credential = error.credential;
+    })
+
+  yield put({
+    type: 'SET_PROFILE',
+    payload: {
+      isLoaded: true,
+      user,
+    },
+  });
+
+  yield console.log('Token is ', token);
 }
