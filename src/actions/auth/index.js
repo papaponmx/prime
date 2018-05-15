@@ -1,5 +1,5 @@
 //  FIXME: Make a barrel from what is in this file.
-import { SIGNUP_USER, SET_USER_INFORMATION } from '../types'
+import { SIGNUP_USER, SET_USER_INFORMATION } from '../types';
 
 export const signupUser = action => ({
   type: SIGNUP_USER,
