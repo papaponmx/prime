@@ -3,8 +3,8 @@
 Features to develop:
 * ✅ Connect with Firebase.
 * ✅ Firebase hosting.
-* ✅ Authentication features.
-* 🔲 Graphql Structure.
+* 🏃 Authentication features.
 * 🔲 Firebase database writing.
 * 🔲 Firebase database reading.
+* 🔲 Graphql Structure.
 * 🔲 Improve UI.
