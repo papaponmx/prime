@@ -1,21 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
+import SigninPage from '../signin-page';
+import { bindActionCreators } from 'redux';
 
 export default function(ComposedComponent) {
   class Authentication extends Component {
-    static contextTypes = {
-      router: React.PropTypes.object
-    }
-
     componentWillMount() {
-      if (!this.props.authenticated) {
-        this.context.router.push('/');
+      if (this.props.authenticated === false) {
+        return this.props.changePage();
       }
     }
 
     componentWillUpdate(nextProps) {
-      if (!nextProps.authenticated) {
-        this.context.router.push('/');
+      if (nextProps.authenticated === false) {
+        return this.props.changePage();
       }
     }
 
@@ -24,9 +23,12 @@ export default function(ComposedComponent) {
     }
   }
 
-  function mapStateToProps(state) {
-    return { authenticated: state.firebase.auth.isLoaded };
+  const mapStateToProps = state => {
+    return { authenticated: state.user.isLoaded };
   }
 
-  return connect(mapStateToProps)(Authentication);
+  const mapDispatchToProps = dispatch =>
+  bindActionCreators({ changePage: () => push('/') }, dispatch);
+
+  return connect(mapStateToProps, mapDispatchToProps)(Authentication);
 }

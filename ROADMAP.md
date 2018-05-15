@@ -3,7 +3,7 @@
 Features to develop:
 * ✅ Connect with Firebase.
 * ✅ Firebase hosting.
-* 🏃 Authentication features.
+* ✅ Authentication features.
 * 🔲 Firebase database writing.
 * 🔲 Firebase database reading.
 * 🔲 Graphql Structure.
