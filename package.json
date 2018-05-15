@@ -72,12 +72,13 @@
   },
   "scripts": {
     "analyze": "source-map-explorer build/static/js/main.*",
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "deploy": "yarn build && firebase deploy",
     "eject": "react-scripts eject",
+    "head": "mocha test/bootstrap.js --recursive test",
     "hollow": "node selenium/index.js",
-    "head": "mocha test/bootstrap.js --recursive test"
+    "test": "react-scripts test --env=jsdom",
+    "start": "react-scripts start"
   },
   "homepage": "https://prime.riosjaime.com"
 }
