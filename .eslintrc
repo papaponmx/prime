@@ -1,53 +1,29 @@
+// Use this file as a starting point for your project's .eslintrc.
+// Copy this file, and add rule overrides as needed.
 {
-  "root": true,
-  "parser": "esprima",
-  "extends": [
-    "standard",
-    "standard-react",
-    "prettier",
-    "prettier/react"
-  ],
-  "plugins": [
-    "babel",
-    "react",
-    "prettier"
-  ],
+  "extends": "airbnb",
+  "parser": "babel-eslint",
   "env": {
     "browser": true,
+    "commonjs": true,
     "es6": true,
+    "jest": true,
     "node": true
   },
-  "ecmaFeatures": {
-    "jsx": true,
-    "modules": true
-  },
-  "globals": {
-    "__DEV__": false,
-    "__COVERAGE__": false,
-    "__TEST__": false
-  },
   "rules": {
-    "semi": [
-      2,
-      "never"
-    ],
-    "no-console": "error",
-    "jsx-quotes": [
-      "error",
-      "prefer-double"
-    ],
-    "prettier/prettier": [
-      "error",
-      {
-        "singleQuote": true,
-        "trailingComma": "all",
-        "semi": true,
-        "bracketSpacing": true,
-        "jsxBracketSameLine": true,
-        "printWidth": 80,
-        "tabWidth": 2,
-        "useTabs": false
-      }
-    ]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "jsx-quotes":  [1, "prefer-single"],
+    "space-before-function-paren": [1, "never"],
+    "react/prop-types": [0],
+    "react/forbid-prop-types": [0],
+    "no-console": [0],
+    "semi": always,
+    "comma-dangle": [2, {
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
+      "imports": "ignore",
+      "exports": "ignore",
+      "functions": "ignore"
+    }]
   }
 }

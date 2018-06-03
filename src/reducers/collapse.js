@@ -1,4 +1,4 @@
-import { ADD_COLLAPSE, TOGGLE_COLLAPSE } from '../actions';
+import { ADD_COLLAPSE, TOGGLE_COLLAPSE } from '../actions/types';
 
 export default (state = { }, action) => {
 switch (action.type) {
