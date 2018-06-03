@@ -4,8 +4,6 @@
 // yarn start
 // node selenium/index.js
 const selenium = require('selenium-webdriver');
-const expect = chai.expect;
-
 
 const By = selenium.By;
 const driver = new selenium.Builder()
@@ -42,7 +40,3 @@ driver.get('http://localhost:3000/roles/add');
 ROLES_LIST.filter(role => {
   addRole(role);
 });
-
-test('Esta es la página', () => {
-  expect(LOCATORS.addRoleInput).toBeTruthy();
- });

@@ -2,7 +2,7 @@ import _ from 'lodash';
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import List, { ListItem, } from 'material-ui/List';
-import { CardText } from 'material-ui/Card';
+// import { CardText } from 'material-ui/Card';
 
 class GoalsList extends Component {
   // TODO: Optimize this component

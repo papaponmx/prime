@@ -6,8 +6,8 @@ import React from 'react';
 import Button from 'material-ui/Button';
 import TextField from 'material-ui/TextField';
 
-import { addRole, openSnackbar, } from '../../actions';
-
+import { addRole } from '../../actions/roles';
+import { openSnackbar } from '../../actions/snackbar';
 // TODO: Migrate render TextField to another component
 // TODO: Add role description as an optional parameter;
 
