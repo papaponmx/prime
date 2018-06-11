@@ -1,5 +1,5 @@
 // import _ from 'lodash';
-import { List, OrderedMap, } from 'immutable';
+import { List, Map, } from 'immutable';
 import {
   // ADD_GOAL,
   ADD_ROLE,
@@ -8,12 +8,12 @@ import {
   CLOSE_SNACKBAR,
 } from '../actions';
 
-let initialState = OrderedMap({
+let initialState = Map({
   snackbar: {
     message: 'Initial State',
     open: false,
   },
-  list: List(),
+  list: List([]),
 })
 
 const roles = localStorage.getItem('roles');
@@ -26,13 +26,11 @@ export default (state = initialState, action) => {
 
     case ADD_ROLE:
     const newItem =  {
-      //   // id: new Date().valueOf(),
       name: action.payload.role,
-      //   goals: [],
     };
 
-    console.log(state);
-    return state.updateIn(['list'], list => list.push(newItem));
+    localStorage.setItem('roles', JSON.stringify(newItem));
+    return state.update('list', list => list.push(newItem));
 
     // FIXME: Move this to another reducer;
     //   case ADD_GOAL:
