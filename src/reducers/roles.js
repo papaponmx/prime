@@ -14,49 +14,21 @@ let initialState = Map({
     open: false,
   },
   list: List([]),
-})
-
+});
+//  TODO: Add localStorage Interaction
 const roles = localStorage.getItem('roles');
-if (roles) {
-  initialState.list.merge(JSON.parse(roles));
-}
+// if (roles) {
+//   initialState.list.merge(JSON.parse(roles));
+// }
 
 export default (state = initialState, action) => {
   switch (action.type) {
 
     case ADD_ROLE:
-    const newItem =  {
-      name: action.payload.role,
-    };
-
-    localStorage.setItem('roles', JSON.stringify(newItem));
-    return state.update('list', list => list.push(newItem));
-
-    // FIXME: Move this to another reducer;
-    //   case ADD_GOAL:
-    //   const roleSelected =  Array.filter(state.list, role => role.id === Number(action.payload.roleId));
-    //   const name = action.payload.goal;
-    //   const goalId = `${_.size(roleSelected[0].list) + 1}G${action.payload.roleId}`;
-    //   list = [ {
-    //     ...state.list[roleSelected[0]],
-    //     goals: [
-    //       ...state.list[roleSelected[0]].goals,
-    //       {
-    //         name,
-    //         id: goalId,
-    //       },
-    //     ]
-    //   },
-    //   ...state.list,
-    // ];
-    // list = _.uniqBy(list, 'id');
-    // // newState = {
-    // //   ...state,
-    // //   list,
-    // // };
-    //
+    const newItem =  { name: action.payload.role };
+    const newState = state.update('list', list => list.push(newItem));
     // localStorage.setItem('roles', JSON.stringify(newState));
-    // return state;
+    return newState;
 
     case OPEN_SNACKBAR:
     // TODO: use immutable here

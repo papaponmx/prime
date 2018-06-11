@@ -11,39 +11,41 @@ import { themeStyle } from '../../styles/buttonStyles';
 
 class AddGoalForm extends Component {
   render() {
-    if (!this.props.roles) {
-      return(
-        <div>
-          <p>Please start by adding some roles</p>
-          <Link to="/roles/add">
-            <Button style={themeStyle}>Add Roles</Button>
-          </Link>
-      </div>
-    )
-  } else {
+    // TODO: Rethink goals-roles graph;
+    // Should be something like this:
+    // [
+    //   {
+    //     GoalName:
+    //     roleId:
+    //     dueDate:
+    //
+    //   }
+    // ]
+
     return (
       <form className="flex-col-start" onSubmit={this.props.handleSubmit}>
-        <Field
-          id="select-role-input"
-          component={renderSelect}
-          options={this.props.roles}
-          label="Role"
-          name="roleId"
-        />
+      {/*
+      <Field
+      id="select-role-input"
+      component={renderSelect}
+      options={this.props.roles}
+      label="Role"
+      name="roleId"
+      />
+      */}
 
-        <label id="add-goal-input">New goal</label>
-        <Field
-          name="goal"
-          component="input"
-          id="add-goal-input"
-        />
+      <label id="add-goal-input">New goal</label>
+      <Field
+      name="goal"
+      component="input"
+      id="add-goal-input"
+      />
 
-        {/* TODO: Add meta-data for goals, like: status = completed, dueDate, priority, etc. */}
-        <Button type="submit" className="cta">Add goal</Button>
+      {/* TODO: Add meta-data for goals, like: status = completed, dueDate, priority, etc. */}
+      <Button type="submit" className="cta">Add goal</Button>
       </form>
     );
   }
-}
 }
 
 // TODO: Create added goal notification success or shit.
