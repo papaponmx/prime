@@ -12,7 +12,7 @@ class RolePage extends React.Component {
     return (
       <div>
         <h1>Roles</h1>
-        <RolesList roles={this.props.roles} />
+        <RolesList roles={this.props.roles.toJS()} />
         <Button style={themeStyle} onClick={() => this.props.changePage()}>Add Roles</Button>
       </div>
     )
