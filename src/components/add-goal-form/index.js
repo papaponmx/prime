@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 import { Field, reduxForm, reset} from 'redux-form'
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import Button from 'material-ui/Button';
 
 import { addGoal }from '../../actions';
-import { renderSelect } from '../form-utils';
-
-import { themeStyle } from '../../styles/buttonStyles';
+// import { renderSelect } from '../form-utils';
 
 class AddGoalForm extends Component {
   render() {

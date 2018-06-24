@@ -1,25 +1,19 @@
+import { List, Map, } from 'immutable';
 import { ADD_GOAL } from "../actions/index";
 
-
-const initialState = {
-  list: [],
-}
+const initialState = Map({
+  list: List([]),
+});
 
 export default (state = initialState, action) => {
   switch (action.type) {
 
     case ADD_GOAL:
-    const id = state.list.length !== 0 ? state.list.length + 1 + 'G' : ;
-    const list = state.list.concat(
-      {
-        id,
-        name: action.payload,
-      }
-    )
-    return {
-      ...state,
-      list,
-    }
+      const { name } = action.payload;
+      return state.update('list', list =>
+      list.push({
+        name,
+      }));
 
     default:
     return state;

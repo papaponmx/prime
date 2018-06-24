@@ -1,5 +1,5 @@
 import * as firebase from 'firebase';
-import { provider, auth } from '../store';
+import { provider } from '../store';
 import { put } from 'redux-saga/effects';
 import { setUserInformation } from '../actions/auth';
 
@@ -17,10 +17,10 @@ export function* signupSaga() {
       userInformation = result.user
     })
     .catch(error => {
-      const errorCode = error.code
-      const errorMessage = error.message
-      const email = error.email
-      const credential = error.credential
+      // const errorCode = error.code
+      // const errorMessage = error.message
+      // const email = error.email
+      // const credential = error.credential
     });
 
   yield put(

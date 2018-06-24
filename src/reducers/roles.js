@@ -16,7 +16,7 @@ let initialState = Map({
   list: List([]),
 });
 //  TODO: Add localStorage Interaction
-const roles = localStorage.getItem('roles');
+// const roles = localStorage.getItem('roles');
 // if (roles) {
 //   initialState.list.merge(JSON.parse(roles));
 // }

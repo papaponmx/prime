@@ -6,7 +6,7 @@ import AddRolesPage from '../Add-Roles-Page';
 // import { withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
 import GoalsPage from '../goals-page';
-import Home from '../Home';
+// import Home from '../Home';
 import React from 'react';
 import RolePage from '../Roles';
 import SigninPage from '../signin-page';
