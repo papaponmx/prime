@@ -7,12 +7,11 @@ const initialState = Map({
 
 export default (state = initialState, action) => {
   switch (action.type) {
-
     case ADD_GOAL:
-      const { name } = action.payload;
+      const { goal: goalName } = action.payload;
       return state.update('list', list =>
       list.push({
-        name,
+        goalName,
       }));
 
     default:
