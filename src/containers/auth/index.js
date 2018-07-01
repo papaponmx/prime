@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
-import SigninPage from '../signin-page';
+// import SigninPage from '../signin-page';
 import { bindActionCreators } from 'redux';
 
 export default function(ComposedComponent) {
