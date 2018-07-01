@@ -1,20 +1,37 @@
 import { Link, Route, Switch } from 'react-router-dom';
 
 import About from '../About';
-import AddGoalsPage from '../add-goals-page';
-import AddRolesPage from '../Add-Roles-Page';
-// import { withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
-import GoalsPage from '../goals-page';
-// import Home from '../Home';
 import React from 'react';
-import RolePage from '../Roles';
+import Loadable from 'react-loadable';
 import SigninPage from '../signin-page';
 import SignupPage from '../signup-page';
 import ic_face_black_24px from '../../icons/ic_face_black_24px.svg';
 import ic_grade_black_24px from '../../icons/ic_grade_black_24px.svg';
 import ic_home_white_24px from '../../icons/ic_apps_black_24px.svg';
 import RequireAuth  from '../auth';
+import loading from '../../components/Loading';
+
+const RolePage = Loadable({
+  loader: () => import ('../Roles/index'),
+  loading,
+});
+
+const GoalsPage = Loadable({
+  loader: () => import('../goals-page'),
+  loading,
+});
+
+const AddGoalsPage = Loadable({
+  loader: () => import('../add-goals-page'),
+  loading,
+});
+
+const AddRolesPage = Loadable({
+  loader: () => import('../Add-Roles-Page'),
+  loading,
+});
+
 const App = () => (
   <div>
     <AppBar id="app-navigation">
