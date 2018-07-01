@@ -7,16 +7,22 @@ class GoalsList extends Component {
   // TODO: Fisrt Optimize this component
   // IDEA: Add role badge to each list item
   renderList() {
-    return this.props.goals.list.map(goal => (
-        <li>'Esta es una meta'</li>
-      )
-    );
+    return this.props.goals.list.map((goal) => {
+      const { goalName } = goal;
+      return (
+        <List>
+          <ListItem key={goalName}>
+            {goalName}
+          </ListItem>
+        </List>
+      );
+    });
   }
 
   render() {
-    return(
+    return (
       <div>
-        { (this.props.goals.list)
+        {(this.props.goals.list)
           ? this.renderList()
           : `Please start by adding some goals`
         }
@@ -25,8 +31,8 @@ class GoalsList extends Component {
   }
 }
 
-  const mapStateToProps= state => ({
-    goals: state.goals.toJS(),
-  });
+const mapStateToProps = state => ({
+  goals: state.goals.toJS(),
+});
 
-  export default connect(mapStateToProps, null)(GoalsList);
+export default connect(mapStateToProps, null)(GoalsList);
