@@ -12,8 +12,9 @@ export function* signupSaga() {
     .then(result => {
       // This gives you a Google Access Token. You can use it to access the Google API.
       // IDEA: Encript token
+      debugger;
       token = result.credential.accessToken
-      localStorage.setItem('token', token);
+      localStorage.setItem('prime-app-UserToken', token);
       userInformation = result.user
     })
     .catch(error => {
