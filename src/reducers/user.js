@@ -1,21 +1,23 @@
-import { SET_USER_INFORMATION } from '../actions/types';
+import { SET_USER_INFORMATION } from "../actions/types";
 
 let initialState;
 
-const token = localStorage.getItem('prime-app-UserToken');
+const token = localStorage.getItem("prime-app-UserToken");
+const information = localStorage.getItem("prime-app-UserInformation");
 
 if (token) {
   initialState = {
     isLoaded: true,
     user: {
-      token,
-    },
-  }
+      information,
+      token
+    }
+  };
 } else {
   initialState = {
-    isLoaded: false,
-  }
-};
+    isLoaded: false
+  };
+}
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -24,10 +26,10 @@ export default (state = initialState, action) => {
         ...state,
         isLoaded: true,
         token: action.payload.token,
-        information: action.payload.userInformation,
-      }
+        information: action.payload.userInformation
+      };
 
     default:
-      return state
+      return state;
   }
-}
+};
