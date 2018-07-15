@@ -3,7 +3,9 @@ import { SET_USER_INFORMATION } from "../actions/types";
 let initialState;
 
 const token = localStorage.getItem("prime-app-UserToken");
-const information = localStorage.getItem("prime-app-UserInformation");
+const information = JSON.parse(
+  localStorage.getItem("prime-app-UserInformation")
+);
 
 if (token) {
   initialState = {
