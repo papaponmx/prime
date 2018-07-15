@@ -6,8 +6,9 @@ const addGoalSaga = function * () {
   const firestore = firebase.firestore()
   const settings = { timestampsInSnapshots: true }
   firestore.settings(settings)
-  yield db.collection('users').add({
-    first: 'Ada',
+  // TODO: Add userId here
+  yield db.collection('users').doc('USERID').set({
+    first: 'Papaponmx',
     last: 'Lovelace',
     born: 1815
   })
