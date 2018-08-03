@@ -10,7 +10,7 @@ import Divider from 'material-ui/Divider';
 // import { getRoles } from '../../selectors/roles';
 
 class RolesList extends Component {
-  componentWillMount() {
+  componentDidMount() {
     // if (this.props.roles){
     //   for (let role of this.props.roles) {
     //     this.props.registerCollapse(role.name)

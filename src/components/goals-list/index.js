@@ -7,7 +7,8 @@ class GoalsList extends Component {
   // TODO: Fisrt Optimize this component
   // IDEA: Add role badge to each list item
   renderList() {
-    return this.props.goals.list.map((goal) => {
+    const {goals} = this.props;
+    return goals.list.map((goal) => {
       const { goalName } = goal;
       return (
         <List>

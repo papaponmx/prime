@@ -11,14 +11,17 @@ class Home extends Component {
   render () {
     return (
       <div>
-        <CardHeader title={`Hello ${this.props.userInfo.displayName}`} /> TODO: Add relevant information her
+      Hello
+      {
+        // <CardHeader title={`Hello`} />
+      }
       </div>
     )
   }
 }
 
 const mapStateToProps = state => ({
-  userInfo: state.user.user.information
+  userInfo: state.user,
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({

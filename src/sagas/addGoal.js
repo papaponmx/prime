@@ -6,13 +6,14 @@ const addGoalSaga = function * () {
   const firestore = firebase.firestore()
   const settings = { timestampsInSnapshots: true }
   firestore.settings(settings)
+  debugger;
   // TODO: Add userId here
-  yield db.collection('users').doc('USERID').set({
+  yield db.collection('users').doc(firebase.auth().getUid()).set({
     first: 'Papaponmx',
     last: 'Lovelace',
     born: 1815
   })
-    .then(function (docRef) {
+    .then((docRef) => {
       console.log('Document written with ID: ', docRef.id)
     })
     .catch(function (error) {
