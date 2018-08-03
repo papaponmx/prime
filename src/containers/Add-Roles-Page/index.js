@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Snackbar from 'material-ui/Snackbar';
 
-import AddRoleForm from '../../components/Add-Role-Form';
+import AddRoleForm from '../../components/AddRoleForm';
 import {closeSnackbar} from '../../actions';
 
 class AddRolesPage extends Component {

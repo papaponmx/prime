@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import AddGoalForm from '../../components/add-goal-form';
+import AddGoalForm from '../../components/AddGoalForm';
 
 export default class AddGoalsPage extends Component {
   render() {
