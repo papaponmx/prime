@@ -1,7 +1,7 @@
 import { takeEvery } from 'redux-saga/effects'
 import { ADD_GOAL, SIGNUP_USER } from '../actions/types'
-import addGoalSaga from './addGoal'
-import { signupSaga } from './signup'
+import addGoalSaga from './addGoalSaga'
+import { signupSaga } from './signupSaga'
 
 function * watcherSaga () {
   yield takeEvery(SIGNUP_USER, signupSaga)

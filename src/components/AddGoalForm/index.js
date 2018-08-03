@@ -58,7 +58,6 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(addGoal(values));
       dispatch(reset('AddGoalForm'));
     },
-
   }
 }
 
