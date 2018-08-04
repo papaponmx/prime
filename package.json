@@ -2,11 +2,16 @@
   "name": "Prime",
   "version": "0.1.0",
   "private": true,
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "parcel-bundler": "^1.9.7",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
   },
   "scripts": {
+      "start": "parcel index.html"
   },
   "homepage": "https://prime.riosjaime.com"
 }
