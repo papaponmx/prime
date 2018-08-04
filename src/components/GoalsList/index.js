@@ -2,7 +2,6 @@ import { connect } from 'react-redux'
 import React, { Component } from 'react'
 import ListItem from '@material-ui/core/ListItem'
 import List from '@material-ui/core/List';
-// import { CardText } from 'material-ui/Card'
 
 class GoalsList extends Component {
   // TODO: Fisrt Optimize this component
@@ -24,7 +23,7 @@ class GoalsList extends Component {
   render () {
     return (
       <div>
-        {;(this.props.goals.list)
+        {(this.props.goals.list)
            ? this.renderList()
            : `Please start by adding some goals`}
       </div>

@@ -12,7 +12,7 @@ class RolePage extends React.Component {
     return (
       <div>
         <h1>Roles</h1>
-        <RolesList roles={this.props.roles.toJS()} />
+        <RolesList roles={this.props.roles} />
         <Button style={themeStyle} onClick={() => this.props.changePage()}>Add Roles</Button>
       </div>
     )
@@ -24,7 +24,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 }, dispatch)
 
 function mapStateToProps (state) {
-  return { roles: state.roles };
+  return { roles: state.roles.toJS() };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(RolePage);

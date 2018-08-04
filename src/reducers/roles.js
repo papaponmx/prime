@@ -1,5 +1,4 @@
 // import _ from 'lodash';
-import { List, Map, } from 'immutable';
 import {
   // ADD_GOAL,
   ADD_ROLE,
@@ -8,13 +7,13 @@ import {
   CLOSE_SNACKBAR,
 } from '../actions';
 
-let initialState = Map({
+let initialState = {
   snackbar: {
     message: 'Initial State',
     open: false,
   },
-  list: List([]),
-});
+  list: [],
+};
 //  TODO: Add localStorage Interaction
 // const roles = localStorage.getItem('roles');
 // if (roles) {
@@ -23,12 +22,8 @@ let initialState = Map({
 
 export default (state = initialState, action) => {
   switch (action.type) {
-
     case ADD_ROLE:
-    const newItem =  { name: action.payload.role };
-    const newState = state.update('list', list => list.push(newItem));
-    // localStorage.setItem('roles', JSON.stringify(newState));
-    return newState;
+    return state;
 
     case OPEN_SNACKBAR:
     // TODO: use immutable here

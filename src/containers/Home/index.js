@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import Card from "@material-ui/core/Card";
+import ErrorBoundary from '../../components/ErrorBoundary'
+import CardHeader from '@material-ui/core/CardHeader'
 // import RolesList from '../../components/roles-list'
 // import GoalsList from '../../components/goals-list'
 
@@ -10,18 +11,15 @@ class Home extends Component {
 
   render () {
     return (
-      <div>
-      Hello
-      {
-        // <CardHeader title={`Hello`} />
-      }
-      </div>
+      <ErrorBoundary>
+        <CardHeader title={`Hello`} />
+      </ErrorBoundary>
     )
   }
 }
 
 const mapStateToProps = state => ({
-  userInfo: state.user,
+  userInfo: state.user
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({

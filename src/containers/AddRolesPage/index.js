@@ -21,7 +21,8 @@ class AddRolesPage extends Component {
           open={open}
           message={message}
           autoHideDuration={4000}
-          onRequestClose={this.props.closeSnack} />
+          onRequestClose={this.props.closeSnack}
+        />
       </div>
     )
   }
