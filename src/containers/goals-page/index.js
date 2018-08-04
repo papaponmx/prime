@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import GoalsList from '../../components/goals-list';
-import Button from 'material-ui/Button';
+import Button from '@material-ui/core/Button';
 import { themeStyle } from '../../styles/buttonStyles';
 
 

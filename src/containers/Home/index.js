@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { CardHeader } from 'material-ui/Card'
+import Card from "@material-ui/core/Card";
 // import RolesList from '../../components/roles-list'
 // import GoalsList from '../../components/goals-list'
 

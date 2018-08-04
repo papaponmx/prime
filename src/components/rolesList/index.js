@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { map as _map } from 'lodash';
 
-import List, { ListItem, ListItemText } from 'material-ui/List';
-import Divider from 'material-ui/Divider';
+import List, { ListItem, ListItemText } from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
 
 // import GoalsList from '../goals-list';
 // import { addCollapse, toggleCollapse } from '../../actions';

@@ -2,9 +2,9 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import React from 'react';
-import RolesList from '../../components/roles-list';
+import RolesList from '../../components/rolesList';
 import '../../reducers';
-import Button from 'material-ui/Button';
+import Button from '@material-ui/core/Button';
 import {themeStyle} from '../../styles/buttonStyles';
 
 class RolePage extends React.Component {

@@ -1,5 +1,5 @@
-import AppBar from "material-ui/AppBar";
 import React from "react";
+import AppBar from '@material-ui/core/AppBar';
 import Loadable from "react-loadable";
 import { Link, Route, Switch } from "react-router-dom";
 import loading from "../../components/Loading";

@@ -1,94 +1,85 @@
-import { connect } from 'react-redux';
-import { Field, reduxForm, } from 'redux-form'
-import { reset } from 'redux-form';
+import { connect } from 'react-redux'
+import { Field, reduxForm } from 'redux-form'
+import { reset } from 'redux-form'
 
-import React from 'react';
-import Button from 'material-ui/Button';
-import TextField from 'material-ui/TextField';
+import React from 'react'
+import Button from '@material-ui/core/Button'
+import TextField from '@material-ui/core/TextField'
 
-import { addRole } from '../../actions/roles';
-import { openSnackbar } from '../../actions/snackbar';
+import { addRole } from '../../actions/roles'
+import { openSnackbar } from '../../actions/snackbar'
 // TODO: Migrate render TextField to another component
-// TODO: Add role description as an optional parameter;
+// TODO: Add role description as an optional parameter
 
-const renderField = ({
-  input,
-  label,
-  type,
-  meta: { touched, error, }
-}) => {
-  if (touched && error) {
+const renderField = ({input, label, type, meta: { touched, error }}) => {
+  if (touched && error) {
     return (
       <TextField
         required
         error
-        id="required"
+        id='required'
         label={error}
-        margin="normal"
-        {...input}
-      />
-    );
+        margin='normal'
+        {...input} />
+    )
   }
 
   return (
     <TextField
       required
-      id="required"
-      margin="normal"
-      {...input}
-    />
+      id='required'
+      margin='normal'
+      {...input} />
   )
 }
 
 class AddRoleForm extends React.Component {
 
-  render() {
+  render () {
     return (
-      <form className="flex-col-start" onSubmit={this.props.handleSubmit}>
+      <form className='flex-col-start' onSubmit={this.props.handleSubmit}>
         <Field
-          name="role"
+          name='role'
           component={renderField}
-          id="add-role-input"
-          label="Add Role"
-        />
+          id='add-role-input'
+          label='Add Role' />
         {/* <Field
-          name="role"
-          component={renderField}
-          id="add-role-description-input"
-          label="Role description"
+                                          name="role"
+                                          component={renderField}
+                                          id="add-role-description-input"
+                                          label="Role description"
 
-        /> */}
-
-        <Button type="submit" className="cta">Add Role</Button>
+                                        /> */}
+        <Button type='submit' className='cta'>
+          Add Role
+        </Button>
       </form>
     )
   }
 }
 
 const validate = (values) => {
-  const errors= {};
+  const errors = {}
   if (!values.role) {
-    errors.role = `Role can't be empty`;
+    errors.role = `Role can't be empty`
   }
-  return errors;
+  return errors
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     onSubmit: (values) => {
-      dispatch(reset('AddRoleForm'));
-      dispatch(addRole(values));
+      dispatch(reset('AddRoleForm'))
+      dispatch(addRole(values))
       dispatch(openSnackbar({
-        message: `Added your role as a ${values.role}`,
-      }));
-    },
+        message: `Added your role as a ${values.role}`
+      }))
+    }
 
   }
 }
 
 AddRoleForm = reduxForm({
   form: 'AddRoleForm',
-  validate,
-
-})(AddRoleForm);
-export default AddRoleForm = connect (null, mapDispatchToProps)(AddRoleForm);
+validate})(AddRoleForm)
+export default AddRoleForm = connect(null, mapDispatchToProps)(AddRoleForm)

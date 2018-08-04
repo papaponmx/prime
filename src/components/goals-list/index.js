@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
-import List, { ListItem, } from 'material-ui/List';
+import List, { ListItem, } from '@material-ui/core/List';
 // import { CardText } from 'material-ui/Card';
 
 class GoalsList extends Component {
