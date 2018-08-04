@@ -23,12 +23,12 @@ const GoalsPage = Loadable({
 });
 
 const AddGoalsPage = Loadable({
-  loader: () => import("../add-goals-page"),
+  loader: () => import("../AddGoalsPage"),
   loading
 });
 
 const AddRolesPage = Loadable({
-  loader: () => import("../Add-Roles-Page"),
+  loader: () => import("../AddRolesPage"),
   loading
 });
 
