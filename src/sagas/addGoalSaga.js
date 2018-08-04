@@ -1,7 +1,9 @@
 import * as firebase from 'firebase'
+import uniqueId from "../utils/uniqueId";
 
 const addGoalSaga = function * ({ payload }) {
   const createdAt = new Date().getTime()
+  const id = uniqueId('goal');
   const { goal: name } = payload
   const db = yield firebase.firestore()
   const firestore = firebase.firestore()
@@ -12,15 +14,16 @@ const addGoalSaga = function * ({ payload }) {
   debugger
   // TODO: Add dueDate
   // TODO: Add Area asocciated
-  // TODO: Add Area dinamyc ID http://www.frontcoded.com/javascript-create-unique-ids.html
+
   yield db.collection('users')
     .doc(firebase.auth().getUid())
     .collection('goals')
-    .doc('43')
+    .doc(id)
     .set({
       createdAt,
-    name})
-    .then((docRef) => {
+      id,
+      name,
+    }).then((docRef) => {
       console.log('Document written with ID: ', docRef)
     })
     .catch((error) => {
