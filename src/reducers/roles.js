@@ -1,4 +1,3 @@
-// import _ from 'lodash';
 import {
   // ADD_GOAL,
   ADD_ROLE,
@@ -26,13 +25,10 @@ export default (state = initialState, action) => {
     return state;
 
     case OPEN_SNACKBAR:
-    // TODO: use immutable here
     return state;
     case CLOSE_SNACKBAR:
-    // TODO: use immutable here
     return state;
     case DELETE_ROLE:
-    // TODO: use immutable here
     return state;
     default:
     return state;

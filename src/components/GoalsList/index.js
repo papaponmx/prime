@@ -32,7 +32,7 @@ class GoalsList extends Component {
 }
 
 const mapStateToProps = state => ({
-  goals: state.goals.toJS()
+  goals: state.goals.list
 })
 
 export default connect(mapStateToProps, null)(GoalsList)

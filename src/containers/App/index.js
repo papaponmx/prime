@@ -13,12 +13,12 @@ import SigninPage from "../signin-page";
 import SignupPage from "../signup-page";
 
 const RolePage = Loadable({
-  loader: () => import("../Roles/index"),
+  loader: () => import("../Roles"),
   loading
 });
 
 const GoalsPage = Loadable({
-  loader: () => import("../goals-page"),
+  loader: () => import("../GoalsPage"),
   loading
 });
 
@@ -32,13 +32,13 @@ const AddRolesPage = Loadable({
   loading
 });
 
+/* <Link to="/about-us">About</Link> TODO: Find a place to put this link */
 const App = () => (
   <div>
     <AppBar id="app-navigation">
       <Link to="/">
         <img src={ic_home_white_24px} alt="home icon" />
       </Link>
-      {/* <Link to="/about-us">About</Link> TODO: Find a place to put this link */}
       <Link to="/roles">
         <img src={ic_face_black_24px} alt="roles icon" />
       </Link>

@@ -23,8 +23,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   changePage: () => push('/roles/add')
 }, dispatch)
 
-function mapStateToProps (state) {
-  return { roles: state.roles.toJS() };
-}
+const mapStateToProps = (state) => ({ roles: state.roles });
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(RolePage);
