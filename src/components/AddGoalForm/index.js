@@ -21,21 +21,17 @@ class AddGoalForm extends Component {
 
     return (
       <form className="flex-col-start" onSubmit={this.props.handleSubmit}>
-      {/*
-      <Field
-      id="select-role-input"
-      component={renderSelect}
-      options={this.props.roles}
-      label="Role"
-      name="roleId"
-      />
-      */}
-
       <label id="add-goal-input">New goal</label>
       <Field
       name="goal"
       component="input"
       id="add-goal-input"
+      />
+      <Field
+      name=''
+      component='input'
+      id='goal-due-date'
+      type='date'
       />
 
       {/* TODO: Add meta-data for goals, like: status = completed, dueDate, priority, etc. */}

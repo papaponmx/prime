@@ -10,8 +10,6 @@ const addGoalSaga = function * ({ payload }) {
   const settings = { timestampsInSnapshots: true }
   firestore.settings(settings)
 
-  console.log(payload)
-  debugger
   // TODO: Add dueDate
   // TODO: Add Area asocciated
 
