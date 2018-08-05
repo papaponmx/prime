@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getGoalById } from '../../getters'
+import { deleteGoal } from '../../actions'
+// import { Link } from 'react-router-dom'
+
 
 class GoalDetailPage extends Component {
   render () {
+    const { deleteGoal } = this.props;
     const {
       name: goalName,
       id,
@@ -20,9 +24,10 @@ class GoalDetailPage extends Component {
         <p>You should do this by <time dateTime={dueDate}>{dueDate}</time>
         </p>
 
-        <p>This goal was created at <time dueTime={createdAt}>{createdAt}</time>
+        <p>This goal was created at <time dateTime={createdAt}>{createdAt}</time>
         </p>
-
+        <a
+          onClick={deleteGoal}>Delete Goal</a>
       </section>
     )
   }
@@ -31,9 +36,10 @@ class GoalDetailPage extends Component {
 const mapStateToProps = (state, props) => ({
   goal: getGoalById(state, props.match.params.id),
 })
-// const mapDispatchToProps = {
 
-// }
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  deleteGoal: () => dispatch(deleteGoal(ownProps.match.params.id)),
+})
 
-
-export default connect(mapStateToProps)(GoalDetailPage);
+export default connect(mapStateToProps, mapDispatchToProps)
+(GoalDetailPage);
