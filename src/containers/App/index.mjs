@@ -4,7 +4,8 @@ import HomePage from '../HomePage/index.mjs'
 import LoginPage from '../LoginPage'
 import RequireAuth from '../Auth'
 import AboutPage from '../AboutPage'
-// import About from '../about'
+import AddGoalPage from '../AddGoalPage'
+import GoalsPage from '../GoalsPage'
 
 const App = () => (
   <div>
@@ -18,7 +19,7 @@ const App = () => (
       <Route exact path='/' component={RequireAuth(HomePage)} />
       <Route exact path='/about' component={AboutPage} />
       <Route exact path='/login' component={LoginPage} />
-      <Route exact path='/goals/add' component={RequireAuth(AddGoalsPage)} />
+      <Route exact path='/goals/add' component={RequireAuth(AddGoalPage)} />
       <Route exact path='/goals' component={RequireAuth(GoalsPage)} />
     </main>
   </div>
