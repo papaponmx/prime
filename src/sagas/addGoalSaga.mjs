@@ -23,6 +23,7 @@ const addGoalSaga = function * ({ payload }) {
       createdAt,
       dueDate,
       id,
+      isDone: false,
     name}).then((docRef) => {
     console.log('Document written with ID: ', docRef)
   })
