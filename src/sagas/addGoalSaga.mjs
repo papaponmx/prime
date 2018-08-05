@@ -1,5 +1,5 @@
 import 'babel-polyfill'
-import * as firebase from 'firebase'
+import firebase from 'firebase/app'
 import uniqueId from '../utils/uniqueId'
 
 const addGoalSaga = function * ({ payload }) {
@@ -7,15 +7,13 @@ const addGoalSaga = function * ({ payload }) {
   const id = uniqueId('goal')
   const {
     goal: name,
-  dueDate
-} = payload
+    dueDate,
+  } = payload
   const db = yield firebase.firestore()
   const firestore = firebase.firestore()
   const settings = { timestampsInSnapshots: true }
   firestore.settings(settings)
 
-  // TODO: Add dueDate
-  // TODO: Add Area asocciated
 
   yield db.collection('users')
     .doc(firebase.auth().getUid())
