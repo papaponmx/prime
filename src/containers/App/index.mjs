@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Link } from 'react-router-dom'
+import { Route, Link, Switch } from 'react-router-dom'
 import HomePage from '../HomePage/index.mjs'
 import LoginPage from '../LoginPage'
 import RequireAuth from '../Auth'
@@ -11,18 +11,19 @@ import GoalDetailPage from '../GoalDetailPage'
 const App = () => (
   <div>
     <header>
-      <Link to='/'> Home
-      </Link>
-      <Link to='/about'> About
-      </Link>
+      <Link to='/'> Home</Link>
+      <Link to='/about'> About</Link>
+      <Link to='/goals/add'>Add Goals</Link>
     </header>
     <main>
-      <Route exact path='/' component={RequireAuth(HomePage)} />
-      <Route exact path='/about' component={AboutPage} />
-      <Route exact path='/login' component={LoginPage} />
-      <Route exact path='/goals/add' component={RequireAuth(AddGoalPage)} />
-      <Route exact path='/goals/:id' component={RequireAuth(GoalDetailPage)} />
-      <Route exact path='/goals' component={RequireAuth(GoalsPage)} />
+      <Switch>
+        <Route exact path='/' component={RequireAuth(HomePage)} />
+        <Route exact path='/about' component={AboutPage} />
+        <Route exact path='/login' component={LoginPage} />
+        <Route exact path='/goals/add' component={RequireAuth(AddGoalPage)} />
+        <Route exact path='/goals/:id' component={RequireAuth(GoalDetailPage)} />
+        <Route exact path='/goals' component={RequireAuth(GoalsPage)} />
+      </Switch>
     </main>
   </div>
 )

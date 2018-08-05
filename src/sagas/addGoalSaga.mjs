@@ -24,12 +24,8 @@ const addGoalSaga = function * ({ payload }) {
       dueDate,
       id,
       isDone: false,
-    name}).then((docRef) => {
-    console.log('Document written with ID: ', docRef)
-  })
-    .catch((error) => {
-      console.error('Error adding document: ', error)
-    })
+    name}).then(() => '')
+    .catch((error) => error)
 }
 
 export default addGoalSaga
