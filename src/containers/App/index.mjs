@@ -18,11 +18,11 @@ const App = () => (
     <main>
       <Switch>
         <Route exact path='/' component={RequireAuth(HomePage)} />
-        <Route exact path='/about' component={AboutPage} />
-        <Route exact path='/login' component={LoginPage} />
-        <Route exact path='/goals/add' component={RequireAuth(AddGoalPage)} />
-        <Route exact path='/goals/:id' component={RequireAuth(GoalDetailPage)} />
-        <Route exact path='/goals' component={RequireAuth(GoalsPage)} />
+        <Route path='/about' component={AboutPage} />
+        <Route path='/login' component={LoginPage} />
+        <Route path='/goals/add' component={RequireAuth(AddGoalPage)} />
+        <Route path='/goals/:id' component={RequireAuth(GoalDetailPage)} />
+        <Route path='/goals' component={RequireAuth(GoalsPage)} />
       </Switch>
     </main>
   </div>
