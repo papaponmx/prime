@@ -28,8 +28,9 @@ yarn-error.log*
 
 src/settings/firebase\.js
 .firebaserc
-.firebase.config.json
+.firebase.config.mjs
 
 
 # cache
-/cache
+.cache
+.vscode
