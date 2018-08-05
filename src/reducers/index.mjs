@@ -6,12 +6,12 @@ import userReducer from './userReducer'
 import goalsReducer from './goalsReducer'
 
 const rootReducer = combineReducers({
-  // collapses: collapseReducer,
   form: formReducer,
-  // firebase: firebaseReducer,
   goals: goalsReducer,
-  // roles: rolesReducer,
   user: userReducer,
+  // collapses: collapseReducer,
+  // firebase: firebaseReducer,
+  // roles: rolesReducer,
 })
 
 export default rootReducer

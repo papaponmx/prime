@@ -30,7 +30,7 @@ export default (state = initialState, { type, payload }) => {
         ...state,
         fetched: true,
         fetching: false,
-        list: payload.list
+        list: payload,
       };
 
     default:
