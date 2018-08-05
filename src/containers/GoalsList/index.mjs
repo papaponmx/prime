@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchGoals } from '../../actions'
+import { Link } from 'react-router-dom'
 
 export class GoalsList extends Component {
   componentDidMount () {
@@ -10,7 +11,7 @@ export class GoalsList extends Component {
   }
 
   render () {
-    const {       goals, fetched    } =  this.props;
+    const { goals, fetched } =  this.props;
 
     return (
       <div>
@@ -19,6 +20,9 @@ export class GoalsList extends Component {
           {fetched && goals.map( ({ id, name}) => (
             <li key={id}>
               {name}
+              <Link to={`goals/${id}`} >
+                View Detail
+              </Link>
             </li>
           ))}
         </ul>

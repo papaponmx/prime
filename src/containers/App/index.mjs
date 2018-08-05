@@ -6,6 +6,7 @@ import RequireAuth from '../Auth'
 import AboutPage from '../AboutPage'
 import AddGoalPage from '../AddGoalPage'
 import GoalsPage from '../GoalsPage'
+import GoalDetailPage from '../GoalDetailPage'
 
 const App = () => (
   <div>
@@ -20,6 +21,7 @@ const App = () => (
       <Route exact path='/about' component={AboutPage} />
       <Route exact path='/login' component={LoginPage} />
       <Route exact path='/goals/add' component={RequireAuth(AddGoalPage)} />
+      <Route exact path='/goals/:id' component={RequireAuth(GoalDetailPage)} />
       <Route exact path='/goals' component={RequireAuth(GoalsPage)} />
     </main>
   </div>
