@@ -3,6 +3,9 @@ import {
   FETCH_GOALS,
   FETCH_GOALS_ERROR,
   FETCH_GOALS_SUCCESS,
+  DELETE_GOAL,
+  DELETE_GOAL_ERROR,
+  DELETE_GOAL_SUCCESS,
 } from '.'
 
 export const addGoal = values => {
@@ -24,6 +27,21 @@ export const fetchGoalsError = (params) => ({
 
 export const fetchGoalsSuccess = (params) => ({
   type: FETCH_GOALS_SUCCESS,
+  payload: params,
+})
+
+export const deleteGoal = (params) => ({
+  type: DELETE_GOAL,
+  payload: params,
+})
+
+export const deleteGoalError = (params) => ({
+  type: DELETE_GOAL_ERROR,
+  payload: params,
+})
+
+export const deleteGoalSuccess = (params) => ({
+  type: DELETE_GOAL_SUCCESS,
   payload: params,
 })
 
