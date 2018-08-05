@@ -4,8 +4,8 @@ Features to develop:
 * ✅ Connect with Firebase.
 * ✅ Firebase hosting.
 * ✅ Authentication features.\
-* 🔲 Code splitting.
-* 🔲 Firebase database writing.
+* ✅ Code splitting.
+* ✅ Firebase database writing.
 * 🔲 Firebase database reading.
 * 🔲 Add service worker.
 * 🔲 i18n
