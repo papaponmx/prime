@@ -9,9 +9,9 @@ const addGoalSaga = function * ({ payload }) {
     goal: name,
     dueDate,
   } = payload
+  const settings = { timestampsInSnapshots: true }
   const db = yield firebase.firestore()
   const firestore = firebase.firestore()
-  const settings = { timestampsInSnapshots: true }
   firestore.settings(settings)
 
 

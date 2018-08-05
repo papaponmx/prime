@@ -1,9 +1,5 @@
-import {
-  ADD_GOAL,
-  FETCH_GOALS,
-  FETCH_GOALS_ERROR,
-  FETCH_GOALS_SUCCESS,
-} from '.'
+import { ADD_GOAL, FETCH_GOALS, FETCH_GOALS_ERROR, FETCH_GOALS_SUCCESS} from '.'
+import { getUid } from '../getters';
 
 export const addGoal = values => {
   return {
@@ -14,16 +10,17 @@ export const addGoal = values => {
 
 export const fetchGoals = (params) => ({
   type: FETCH_GOALS,
-  payload: params,
+  payload: {
+    ...params
+  }
 })
 
 export const fetchGoalsError = (params) => ({
   type: FETCH_GOALS_ERROR,
-  payload: params,
+  payload: params
 })
 
 export const fetchGoalsSuccess = (params) => ({
   type: FETCH_GOALS_SUCCESS,
-  payload: params,
+  payload: params
 })
-
