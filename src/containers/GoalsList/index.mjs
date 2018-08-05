@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchGoals } from '../../actions'
 import { Link } from 'react-router-dom'
+import ErrorBoundary from '../../components/ErrorBoundary'
 
 export class GoalsList extends Component {
   componentDidMount () {
@@ -14,7 +15,7 @@ export class GoalsList extends Component {
     const { goals, fetched } =  this.props;
 
     return (
-      <div>
+      <ErrorBoundary>
         <h3>These are your Goals</h3>
         <ul>
           {fetched && goals.map( ({ id, name}) => (
@@ -26,7 +27,7 @@ export class GoalsList extends Component {
             </li>
           ))}
         </ul>
-      </div>
+      </ErrorBoundary>
     )
   }
 }
