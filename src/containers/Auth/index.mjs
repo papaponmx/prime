@@ -28,7 +28,7 @@ export default function (ComposedComponent) {
   }
 
   const mapDispatchToProps = dispatch =>
-    bindActionCreators({ changePage: () => push('/') }, dispatch);
+    bindActionCreators({ changePage: () => push('/login') }, dispatch);
 
   return connect(mapStateToProps, mapDispatchToProps)(Authentication);
 }
