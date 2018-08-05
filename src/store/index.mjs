@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import createHistory from 'history/createBrowserHistory'
 import { connectRouter, routerMiddleware } from 'connected-react-router'
-import firebase from 'firebase'
+import firebase from 'firebase/app';
 
 import rootReducer from '../reducers/index.mjs'
 import { firebaseConfig } from '../.firebase.config.mjs'
@@ -37,9 +37,10 @@ const store = createStore(
   composedEnhancers
 )
 
-firebase.initializeApp(firebaseConfig)
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig)
+}
+
 sagaMiddleware.run(watcherSaga)
 
-export const provider = new firebase.auth.GoogleAuthProvider();
-
-export default store
+export default store;

@@ -1,11 +1,11 @@
-import firebase from 'firebase'
-import { provider } from '../store/index.mjs'
+import * as firebase from 'firebase'
 import { put } from 'redux-saga/effects'
 import { setUserInformation } from '../actions/auth'
 
-export function* signupSaga() {
+export function * signupSaga () {
   let token, userInformation
 
+  const provider = yield new firebase.auth.GoogleAuthProvider()
   yield firebase
     .auth()
     .signInWithPopup(provider)
@@ -27,7 +27,6 @@ export function* signupSaga() {
   yield put(
     setUserInformation({
       token,
-      userInformation
-    })
+    userInformation})
   )
 }
