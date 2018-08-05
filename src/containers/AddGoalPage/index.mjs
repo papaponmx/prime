@@ -1,4 +1,5 @@
 import React from 'react'
+import AddGoalForm from '../../components/AddGoalForm';
 
 const AddGoalsPage = (params) => (
   <section>

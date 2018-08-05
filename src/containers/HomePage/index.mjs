@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 
 export default class HomePage extends Component {
-  render() {
+  render () {
     return (
-      <div>
-        Home Page
-      </div>
+      <section>
+        <h1>Home Page</h1>
+        TODO: Add goals List with fetch from Firebase
+      </section>
     )
   }
 }

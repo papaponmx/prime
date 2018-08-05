@@ -5,7 +5,10 @@ import uniqueId from '../utils/uniqueId'
 const addGoalSaga = function * ({ payload }) {
   const createdAt = new Date().getTime()
   const id = uniqueId('goal')
-  const { goal: name } = payload
+  const {
+    goal: name,
+  dueDate
+} = payload
   const db = yield firebase.firestore()
   const firestore = firebase.firestore()
   const settings = { timestampsInSnapshots: true }
@@ -20,6 +23,7 @@ const addGoalSaga = function * ({ payload }) {
     .doc(id)
     .set({
       createdAt,
+      dueDate,
       id,
     name}).then((docRef) => {
     console.log('Document written with ID: ', docRef)
