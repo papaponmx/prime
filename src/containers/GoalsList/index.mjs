@@ -10,9 +10,18 @@ export class GoalsList extends Component {
   }
 
   render () {
+    const {       goals, fetched    } =  this.props;
+
     return (
       <div>
         <h3>These are your Goals</h3>
+        <ul>
+          {fetched && goals.map( ({ id, name}) => (
+            <li key={id}>
+              {name}
+            </li>
+          ))}
+        </ul>
       </div>
     )
   }

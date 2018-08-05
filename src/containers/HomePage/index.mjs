@@ -6,7 +6,7 @@ export default class HomePage extends Component {
     return (
       <section>
         <h1>Home Page</h1>
-        <GoalsList />>
+        <GoalsList />
       </section>
     )
   }
