@@ -1,4 +1,4 @@
-import 'babel-polyfill';
+import 'babel-polyfill'
 import * as firebase from 'firebase'
 import uniqueId from '../utils/uniqueId'
 
@@ -9,7 +9,7 @@ const addGoalSaga = function * ({ payload }) {
   const db = yield firebase.firestore()
   const firestore = firebase.firestore()
   const settings = { timestampsInSnapshots: true }
-   firestore.settings(settings)
+  firestore.settings(settings)
 
   // TODO: Add dueDate
   // TODO: Add Area asocciated
@@ -21,8 +21,7 @@ const addGoalSaga = function * ({ payload }) {
     .set({
       createdAt,
       id,
-      name,
-    }).then((docRef) => {
+    name}).then((docRef) => {
     console.log('Document written with ID: ', docRef)
   })
     .catch((error) => {
