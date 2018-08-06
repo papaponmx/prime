@@ -6,10 +6,14 @@ Features to develop:
 * ✅ Authentication features.\
 * ✅ Firebase database writing.
 * ✅ Firebase database reading.
-* 🔲 Code splitting.
-* 🔲 Add service worker.
-* 🔲 i18n
+* ✅ Code splitting.
+* 🔲 Format dates.
+* 🔲 Add Roles.
 * 🔲 Graphql Structure.
+* 🔲 Add unit tests.
+* 🔲 Integrate material-ui.
+* 🔲 Visual regression tests.
+* 🔲 i18n
 * 🔲 Add Styletron.
+* 🔲 Add service worker.
 * 🔲 Improve UI.
-git
