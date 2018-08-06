@@ -1,6 +1,6 @@
 import 'babel-polyfill'
-import firebase from 'firebase/app'
 import uniqueId from '../utils/uniqueId'
+import { database as db, app as firebase, } from '../store';
 
 const addGoalSaga = function * ({ payload }) {
   const createdAt = new Date().getTime()
@@ -9,11 +9,6 @@ const addGoalSaga = function * ({ payload }) {
     goal: name,
     dueDate,
   } = payload
-  const settings = { timestampsInSnapshots: true }
-  const db = yield firebase.firestore()
-  const firestore = firebase.firestore()
-  firestore.settings(settings)
-
 
   yield db.collection('users')
     .doc(firebase.auth().getUid())

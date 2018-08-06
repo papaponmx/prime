@@ -36,8 +36,9 @@ const store = createStore(
   composedEnhancers
 )
 
-export const app = firebase.initializeApp(config);
-export const database = firebase.firestore()
+export const app = firebase.initializeApp(config)
+export const database = firebase.firestore();
+database.settings({ timestampsInSnapshots: true })
 export const googleProvider = new firebase.auth.GoogleAuthProvider()
 
 sagaMiddleware.run(watcherSaga)
