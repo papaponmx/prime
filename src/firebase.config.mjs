@@ -1,6 +1,3 @@
-import firebase from 'firebase';
-
-
 // This is a template file, complete with your app data;
 export const config = {
   apiKey: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
@@ -12,6 +9,3 @@ export const config = {
 }
 
 // This is what you should use on sagas
-export const app = firebase.initializeApp(config);
-export const database = firebase.firestore();
-export const googleProvider = new firebase.auth.GoogleAuthProvider();
