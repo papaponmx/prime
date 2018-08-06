@@ -15,6 +15,7 @@
     "react": "*",
     "react-dom": "^16.4.2",
     "react-google-button": "^0.5.3",
+    "react-loadable": "^5.4.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-router-redux": "^4.0.8",
@@ -23,7 +24,9 @@
     "redux-saga": "^0.16.0"
   },
   "scripts": {
-    "start": "parcel src/index.html --open"
+    "start": "parcel src/index.html --open",
+    "build": "parcel build src/index.html",
+    "deploy": "yarn build && firebase deploy"
   },
   "homepage": "https://prime.riosjaime.com"
 }

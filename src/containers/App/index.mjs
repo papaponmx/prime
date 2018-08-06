@@ -1,12 +1,39 @@
 import React from 'react'
 import { Route, Link, Switch } from 'react-router-dom'
-import HomePage from '../HomePage/index.mjs'
+import Loadable from "react-loadable";
 import LoginPage from '../LoginPage'
 import RequireAuth from '../Auth'
 import AboutPage from '../AboutPage'
-import AddGoalPage from '../AddGoalPage'
-import GoalsPage from '../GoalsPage'
-import GoalDetailPage from '../GoalDetailPage'
+
+const AddGoalPage = Loadable({
+  loader: () => import("../AddGoalPage"),
+  loading() {
+    // TODO: Make a HOC out of this
+    return <div>Loading...</div>;
+  }
+});
+
+const GoalsPage = Loadable({
+  loader: () => import("../GoalsPage"),
+  loading() {
+    return <div>Loading...</div>;
+  }
+});
+
+const GoalDetailPage = Loadable({
+  loader: () => import("../GoalDetailPage"),
+  loading() {
+    return <div>Loading...</div>;
+  }
+});
+
+const HomePage = Loadable({
+  loader: () => import("../HomePage"),
+  loading() {
+    return <div>Loading...</div>;
+  }
+});
+
 
 const App = () => (
   <div>
@@ -31,4 +58,3 @@ const App = () => (
 export default App
 // <Route exact path="/roles/add" component={RequireAuth(AddRolesPage)} />
 // <Route exact path="/roles" component={RequireAuth(RolePage)} />
-// <Route exact path="/signup" component={SignupPage} />
