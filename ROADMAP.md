@@ -12,3 +12,4 @@ Features to develop:
 * 🔲 Graphql Structure.
 * 🔲 Add Styletron.
 * 🔲 Improve UI.
+git
