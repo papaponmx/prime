@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import createHistory from 'history/createBrowserHistory'
 import { connectRouter, routerMiddleware } from 'connected-react-router'
-import firebase from 'firebase'
+import firebase from 'firebase/app'
 import createSagaMiddleware from 'redux-saga'
 import rootReducer from '../reducers/index.mjs'
 import watcherSaga from '../sagas/index.mjs'
