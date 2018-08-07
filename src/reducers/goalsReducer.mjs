@@ -2,7 +2,8 @@ import "babel-polyfill";
 import {
   FETCH_GOALS,
   FETCH_GOALS_ERROR,
-  FETCH_GOALS_SUCCESS
+  FETCH_GOALS_SUCCESS,
+  MARK_GOAL_AS_DONE,
 } from "../actions";
 
 const initialState = {
@@ -32,6 +33,10 @@ export default (state = initialState, { type, payload }) => {
         fetching: false,
         list: payload,
       };
+    case MARK_GOAL_AS_DONE:
+    return {
+      ...state
+    }
 
     default:
       return state;
