@@ -25,6 +25,7 @@ const loginSaga = function * () {
       userInformation})
     )
   } catch (error) {
+    // FIXME: Handle error gracefully
     console.log(error)
   }
 }
