@@ -7,8 +7,11 @@ import { database as db, app as firebase } from '../store'
 const addGoalSaga = function * ({ payload }) {
   const createdAt = new Date().getTime()
   const id = uniqueId('goal')
-  const {goal: name, dueDate} = payload
+  const {goal: name, dueDate: date} = payload
 
+  const d = new Date(date);
+  const dueDate = d.getTime();
+  // FIXME: Transform this in a toMilis Function
   yield db.collection('users')
     .doc(firebase.auth().getUid())
     .collection('goals')

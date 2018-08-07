@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getGoalById } from '../../getters'
 import { deleteGoal } from '../../actions'
+import fecha from '../../utils/fecha.mjs'
 // import { Link } from 'react-router-dom'
 
 
@@ -21,10 +22,10 @@ class GoalDetailPage extends Component {
       <section>
         <h2>Goal Detail Page</h2>
         <h3>{goalName}</h3>
-        <p>You should do this by <time dateTime={dueDate}>{dueDate}</time>
+        <p>You should do this by <time dateTime={dueDate}>{fecha(dueDate)}</time>
         </p>
 
-        <p>This goal was created at <time dateTime={createdAt}>{createdAt}</time>
+        <p>This goal was created at <time dateTime={createdAt}>{fecha(createdAt)}</time>
         </p>
         <a
           onClick={deleteGoal}>Delete Goal</a>
