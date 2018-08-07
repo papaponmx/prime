@@ -5,8 +5,6 @@ import { setUserInformation } from '../actions/auth'
 
 const loginSaga = function * () {
   let token, userInformation
-  debugger
-
   try {
     yield app
       .auth()

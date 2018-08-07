@@ -8,6 +8,8 @@ Features to develop:
 * ✅ Firebase database reading.
 * ✅ Code splitting.
 * ✅ Format dates.
+* ✅ Goal mark as completed.
+* 🔲 Goal edits.
 * 🔲 Add Roles.
 * 🔲 Graphql Structure.
 * 🔲 Add unit tests.
