@@ -7,7 +7,7 @@ Features to develop:
 * ✅ Firebase database writing.
 * ✅ Firebase database reading.
 * ✅ Code splitting.
-* 🔲 Format dates.
+* ✅ Format dates.
 * 🔲 Add Roles.
 * 🔲 Graphql Structure.
 * 🔲 Add unit tests.
