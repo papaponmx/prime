@@ -5,8 +5,6 @@ import { setUserInformation } from '../actions/auth'
 
 const loginSaga = function * () {
   let token, userInformation
-  debugger
-
   try {
     yield app
       .auth()
@@ -25,6 +23,7 @@ const loginSaga = function * () {
       userInformation})
     )
   } catch (error) {
+    // FIXME: Handle error gracefully
     console.log(error)
   }
 }

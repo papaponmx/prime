@@ -6,6 +6,7 @@ import {
   DELETE_GOAL,
   DELETE_GOAL_ERROR,
   DELETE_GOAL_SUCCESS,
+  MARK_GOAL_AS_DONE,
 } from '.'
 
 export const addGoal = values => {
@@ -45,3 +46,7 @@ export const deleteGoalSuccess = (params) => ({
   payload: params,
 })
 
+export const markGoalAsDone = (id) => ({
+  type: MARK_GOAL_AS_DONE,
+  payload: id,
+})
