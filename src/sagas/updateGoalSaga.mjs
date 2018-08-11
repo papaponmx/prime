@@ -16,7 +16,6 @@ const updateGoalSaga = function * ({ type, payload: id, }) {
     yield select(getGoalById(payload.id))
   }
 
-  console.log(id);
 
   // TODO: This  update is not working
   try {
