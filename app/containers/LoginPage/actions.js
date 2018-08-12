@@ -7,6 +7,8 @@
 import { LOGIN_USER, LOGIN_USER_ERROR, LOGIN_USER_SUCCESS } from './constants';
 
 export function loginUser() {
+  console.log('DQTP');
+
   return {
     type: LOGIN_USER,
   };

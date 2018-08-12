@@ -19,7 +19,7 @@ import makeSelectLoginPage from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
-import { signin } from './actions';
+import { loginUser } from './actions';
 
 /* eslint-disable react/prefer-stateless-function */
 export class LoginPage extends React.Component {
@@ -33,7 +33,7 @@ export class LoginPage extends React.Component {
         <h1>
           <FormattedMessage {...messages.header} />
         </h1>
-        <GoogleButton onClick={this.props.signin} />
+        <GoogleButton onClick={this.props.login} />
         <p>
           <FormattedMessage {...messages.signInMesssage} />
         </p>
@@ -43,8 +43,7 @@ export class LoginPage extends React.Component {
 }
 
 LoginPage.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-  signin: PropTypes.func.isRequired,
+  login: PropTypes.func,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -53,8 +52,7 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    dispatch,
-    signin: () => dispatch(signin),
+    login: () => dispatch(loginUser()),
   };
 }
 

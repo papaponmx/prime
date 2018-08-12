@@ -1,11 +1,10 @@
 import { createSelector } from 'reselect';
-import { initialState } from './reducer';
 
 /**
  * Direct selector to the goalsList state domain
  */
 
-const selectGoalsListDomain = state => state.get('goalsList', initialState);
+const selectGoalsListDomain = state => state.goalsList;
 
 /**
  * Other specific selectors
