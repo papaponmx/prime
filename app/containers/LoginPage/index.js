@@ -59,7 +59,7 @@ const withConnect = connect(
   mapDispatchToProps,
 );
 
-const withSaga = injectSaga({ key: 'loginPage', saga });
+const withSaga = injectSaga({ key: 'user', saga });
 
 export default compose(
   withSaga,
