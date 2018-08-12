@@ -7,7 +7,7 @@ import {
   DELETE_GOAL_ERROR,
   DELETE_GOAL_SUCCESS,
   MARK_GOAL_AS_DONE,
-} from '.'
+} from './index.mjs'
 
 export const addGoal = values => {
   return {

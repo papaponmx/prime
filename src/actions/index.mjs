@@ -1,6 +1,6 @@
 export * from './auth.mjs'
 // export * from './collapse'
-export * from './goals'
+export * from './goals.mjs'
 // export * from './roles'
 // export * from './snackbar'
 export * from './types'

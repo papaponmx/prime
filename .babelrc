@@ -2,6 +2,7 @@
   "presets": [
     [
       "env",
+      {"modules": false},
       {
         "targets": {
           "browsers": [
@@ -9,10 +10,22 @@
           ]
         }
       }
-    ]
+    ],
+    "react"
   ],
   "plugins": [
     "transform-class-properties",
     "transform-object-rest-spread"
-  ]
+  ],
+  "env": {
+    "testing": {
+      "presets": ["es2015", "stage-1", "react" ],
+      "plugins": [
+        "lodash",
+        "transform-runtime",
+        "transform-es2015-modules-commonjs",
+        "dynamic-import-node"
+      ]
+    }
+  }
 }
