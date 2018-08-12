@@ -1,9 +1,8 @@
-import { createSelector } from 'reselect';
 /**
- * Direct selector to the loginPage state domain
+ * Direct selector to the user state domain
  */
 
-const selectLoginPageDomain = state => state.loginPage;
+const selectUser = state => state.user;
 
 /**
  * Other specific selectors
@@ -13,8 +12,4 @@ const selectLoginPageDomain = state => state.loginPage;
  * Default selector used by LoginPage
  */
 
-const makeSelectLoginPage = () =>
-  createSelector(selectLoginPageDomain, substate => substate.toJS());
-
-export default makeSelectLoginPage;
-export { selectLoginPageDomain };
+export default selectUser;
