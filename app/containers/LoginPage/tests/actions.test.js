@@ -1,13 +1,13 @@
-import { defaultAction } from '../actions';
-import { DEFAULT_ACTION } from '../constants';
+import { loginUser } from '../actions';
+import { LOGIN_USER } from '../constants';
 
 describe('LoginPage actions', () => {
-  describe('Default Action', () => {
-    it('has a type of DEFAULT_ACTION', () => {
+  describe('LoginUser Action', () => {
+    it('has a type of LOGIN_USER', () => {
       const expected = {
-        type: DEFAULT_ACTION,
+        type: LOGIN_USER,
       };
-      expect(defaultAction()).toEqual(expected);
+      expect(loginUser()).toEqual(expected);
     });
   });
 });

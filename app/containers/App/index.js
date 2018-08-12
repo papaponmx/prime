@@ -18,6 +18,7 @@ import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import { LoginPage } from '../LoginPage';
 
+// TODO: Dynamic imports and react Loadable
 export default function App() {
   return (
     <div>
