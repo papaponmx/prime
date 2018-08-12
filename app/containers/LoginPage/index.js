@@ -19,9 +19,7 @@ import { loginUser } from './actions';
 
 /* eslint-disable react/prefer-stateless-function */
 export class LoginPage extends React.Component {
-  componentDidMount() {
-    console.log(JSON.stringify(this.props, null, 2));
-  }
+  componentDidMount() {}
 
   render() {
     return (

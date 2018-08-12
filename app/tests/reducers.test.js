@@ -17,7 +17,7 @@ describe('route reducer', () => {
     const action = { type: LOCATION_CHANGE, payload };
 
     const expectedState = { location: payload };
-    const resultState = routeReducer(state, action).toJS();
+    const resultState = routeReducer(state, action);
     expect(resultState).toEqual(expectedState);
   });
 });

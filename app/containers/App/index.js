@@ -16,7 +16,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
-import { LoginPage } from '../LoginPage';
+import LoginPage from '../LoginPage/Loadable';
 
 // TODO: Dynamic imports and react Loadable
 export default function App() {
