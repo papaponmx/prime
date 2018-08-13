@@ -4,10 +4,24 @@
  *
  */
 
-import { DEFAULT_ACTION } from './constants';
+import {
+  FETCH_GOALS,
+  FETCH_GOALS_ERROR,
+  FETCH_GOALS_SUCCESS,
+} from './constants';
 
-export function defaultAction() {
+export function fetchGoals() {
   return {
-    type: DEFAULT_ACTION,
+    type: FETCH_GOALS,
   };
 }
+
+export const fetchGoalsError = payload => ({
+  type: FETCH_GOALS_ERROR,
+  payload,
+});
+
+export const fetchGoalsSuccess = goals => ({
+  type: FETCH_GOALS_SUCCESS,
+  payload: goals,
+});
