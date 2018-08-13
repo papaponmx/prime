@@ -15,7 +15,7 @@ const selectGoalsListDomain = state => state.goalsList;
  */
 
 const makeSelectGoalsList = () =>
-  createSelector(selectGoalsListDomain, substate => substate.toJS());
+  createSelector(selectGoalsListDomain, substate => substate);
 
 export default makeSelectGoalsList;
 export { selectGoalsListDomain };

@@ -18,6 +18,7 @@ import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
 import { fetchGoals } from './actions';
+import List from '../../components/List';
 
 /* eslint-disable react/prefer-stateless-function */
 export class GoalsList extends React.Component {
@@ -25,6 +26,7 @@ export class GoalsList extends React.Component {
     return (
       <div>
         <FormattedMessage {...messages.header} />
+        <List />
       </div>
     );
   }
