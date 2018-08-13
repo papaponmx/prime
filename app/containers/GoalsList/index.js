@@ -17,6 +17,7 @@ import makeSelectGoalsList from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
+import { fetchGoals } from './actions';
 
 /* eslint-disable react/prefer-stateless-function */
 export class GoalsList extends React.Component {
@@ -30,7 +31,7 @@ export class GoalsList extends React.Component {
 }
 
 GoalsList.propTypes = {
-  dispatch: PropTypes.func.isRequired,
+  dispatch: PropTypes.func,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -39,7 +40,7 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    dispatch,
+    fetchGoals: dispatch(fetchGoals()),
   };
 }
 
