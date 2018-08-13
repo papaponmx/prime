@@ -1,5 +1,9 @@
 import { takeLatest, put } from 'redux-saga/effects';
-import { LOGIN_USER } from './constants';
+import {
+  LOGIN_USER,
+  PRIME_APP_USER_TOKEN,
+  PRIME_APP_USER_DATA,
+} from './constants';
 import { loginUserSuccess, loginUserError } from './actions';
 import { app, googleProvider } from '../../configureStore';
 
@@ -13,9 +17,12 @@ export function* loginUserSaga() {
       .then(result => {
         // IDEA: Encript token
         token = result.credential.accessToken;
-        userInformation = JSON.stringify(result.user);
-        localStorage.setItem('prime-app-UserToken', token);
-        localStorage.setItem('prime-app-UserInformation', userInformation);
+        userInformation = result.user;
+        localStorage.setItem(PRIME_APP_USER_TOKEN, token);
+        localStorage.setItem(
+          PRIME_APP_USER_DATA,
+          JSON.stringify(userInformation),
+        );
       });
     yield put(
       loginUserSuccess({

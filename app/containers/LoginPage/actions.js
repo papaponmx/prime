@@ -17,7 +17,7 @@ export const loginUserError = error => ({
   payload: error,
 });
 
-export const loginUserSuccess = data => ({
+export const loginUserSuccess = ({ payload }) => ({
   type: LOGIN_USER_SUCCESS,
-  payload: data,
+  payload: payload.userInformation,
 });

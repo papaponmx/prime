@@ -4,14 +4,38 @@
  *
  */
 
-import { LOGIN_USER, LOGIN_USER_SUCCESS, LOGIN_USER_ERROR } from './constants';
+import {
+  LOGIN_USER,
+  LOGIN_USER_SUCCESS,
+  LOGIN_USER_ERROR,
+  PRIME_APP_USER_TOKEN,
+  PRIME_APP_USER_DATA,
+} from './constants';
 
-export const initialState = {
-  isLoaded: false,
-  isLoading: false,
-  error: null,
-  data: {},
+const getInitialState = () => {
+  let initialState;
+
+  if (window.localStorage.getItem(PRIME_APP_USER_TOKEN)) {
+    const userData = window.localStorage.getItem(PRIME_APP_USER_DATA);
+    const data = JSON.parse(userData);
+    initialState = {
+      isLoaded: true,
+      isLoading: false,
+      error: null,
+      data,
+    };
+  } else {
+    initialState = {
+      isLoading: false,
+      isLoaded: false,
+      error: null,
+      data: {},
+    };
+  }
+  return initialState;
 };
+
+export const initialState = getInitialState();
 
 function loginPageReducer(state = initialState, action) {
   switch (action.type) {
