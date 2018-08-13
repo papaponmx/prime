@@ -1,19 +1,11 @@
 import { takeLatest, put } from 'redux-saga/effects';
 import { LOGIN_USER } from './constants';
-import { loginUserSuccess } from './actions';
+import { loginUserSuccess, loginUserError } from './actions';
 import { app, googleProvider } from '../../configureStore';
 
 export function* loginUserSaga() {
   let token;
   let userInformation;
-  yield put(
-    loginUserSuccess({
-      user: {
-        name: 'John Wick',
-        email: 'user@example.com',
-      },
-    }),
-  );
   try {
     yield app
       .auth()
@@ -32,8 +24,10 @@ export function* loginUserSaga() {
       }),
     );
   } catch (error) {
-    // FIXME: Handle error gracefully
-    // console.log(error)
+    loginUserError({
+      code: error.code,
+      message: error.message,
+    });
   }
 }
 

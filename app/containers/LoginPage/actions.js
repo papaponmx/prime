@@ -12,9 +12,9 @@ export function loginUser() {
   };
 }
 
-export const loginUserError = data => ({
+export const loginUserError = error => ({
   type: LOGIN_USER_ERROR,
-  payload: data,
+  payload: error,
 });
 
 export const loginUserSuccess = data => ({

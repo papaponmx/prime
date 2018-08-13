@@ -21,7 +21,11 @@ function loginPageReducer(state = initialState, action) {
         isLoading: true,
       };
     case LOGIN_USER_ERROR:
-      return state;
+      return {
+        isLoaded: false,
+        isLoading: false,
+        error: action.paylad,
+      };
     case LOGIN_USER_SUCCESS:
       return {
         ...state,
