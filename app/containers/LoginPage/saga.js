@@ -1,9 +1,11 @@
 import { takeLatest, put } from 'redux-saga/effects';
 import { LOGIN_USER } from './constants';
 import { loginUserSuccess } from './actions';
+import { app, googleProvider } from '../../configureStore';
 
 export function* loginUserSaga() {
-  // let token, userInformation
+  let token;
+  let userInformation;
   yield put(
     loginUserSuccess({
       user: {
@@ -12,28 +14,27 @@ export function* loginUserSaga() {
       },
     }),
   );
-  // try {
-
-  // yield app
-  //   .auth()
-  // .signInWithPopup(googleProvider)
-  // .then(result => {
-  // IDEA: Encript token
-  //       token = result.credential.accessToken
-  //       userInformation = JSON.stringify(result.user)
-  //       localStorage.setItem('prime-app-UserToken', token)
-  //       localStorage.setItem('prime-app-UserInformation', userInformation)
-  //     })
-  //   yield put(
-  //     setUserInformation({
-  //       token,
-  //       userInformation,
-  //     }),
-  //   )
-  // } catch (error) {
-  //   // FIXME: Handle error gracefully
-  //   // console.log(error)
-  // }
+  try {
+    yield app
+      .auth()
+      .signInWithPopup(googleProvider)
+      .then(result => {
+        // IDEA: Encript token
+        token = result.credential.accessToken;
+        userInformation = JSON.stringify(result.user);
+        localStorage.setItem('prime-app-UserToken', token);
+        localStorage.setItem('prime-app-UserInformation', userInformation);
+      });
+    yield put(
+      loginUserSuccess({
+        token,
+        userInformation,
+      }),
+    );
+  } catch (error) {
+    // FIXME: Handle error gracefully
+    // console.log(error)
+  }
 }
 
 // Individual exports for testing

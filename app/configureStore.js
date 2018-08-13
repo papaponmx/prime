@@ -4,9 +4,16 @@
 
 import { createStore, applyMiddleware, compose } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
+import firebase from 'firebase';
 import createSagaMiddleware from 'redux-saga';
 import createReducer from './reducers';
+import config from './.firebase.config';
 
+// Firebase
+export const app = firebase.initializeApp(config);
+export const database = app.firestore();
+export const googleProvider = new firebase.auth.GoogleAuthProvider();
+database.settings({ timestampsInSnapshots: true });
 const sagaMiddleware = createSagaMiddleware();
 
 export default function configureStore(initialState = {}, history) {
