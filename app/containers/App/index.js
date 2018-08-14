@@ -19,14 +19,19 @@ import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import LoginPage from '../LoginPage/Loadable';
 import RequireAuth from '../Auth';
 import GoalsList from '../GoalsList/Loadable';
+import GoalDetailPage from '../GoalDetail/Loadable';
 
-// TODO: Dynamic imports and react Loadable
 export default function App() {
   return (
     <div>
       <Switch>
         <Route exact path="/" component={RequireAuth(HomePage)} />
         <Route exact path="/goals" component={RequireAuth(GoalsList)} />
+        <Route
+          exact
+          path="/goals/:id"
+          component={RequireAuth(GoalDetailPage)}
+        />
         <Route exact path="/login" component={LoginPage} />
         <Route component={NotFoundPage} />
       </Switch>
