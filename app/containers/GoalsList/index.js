@@ -22,11 +22,18 @@ import List from '../../components/List';
 
 /* eslint-disable react/prefer-stateless-function */
 export class GoalsList extends React.Component {
+  componentDidMount() {
+    // if (!this.props.goals.isLoaded && !this.props.goals.isLoading) {
+    //   this.props.fetchGoals();
+    // }
+  }
+
   render() {
+    const { list, isLoaded, isLoading } = this.props.goals;
     return (
       <div>
         <FormattedMessage {...messages.header} />
-        <List />
+        {isLoaded && <List list={list} listType="goals" />}
       </div>
     );
   }
@@ -34,10 +41,12 @@ export class GoalsList extends React.Component {
 
 GoalsList.propTypes = {
   dispatch: PropTypes.func,
+  // fetchGoals: PropTypes.func,
+  goals: PropTypes.object,
 };
 
 const mapStateToProps = createStructuredSelector({
-  goalslist: makeSelectGoalsList(),
+  goals: makeSelectGoalsList(),
 });
 
 function mapDispatchToProps(dispatch) {
