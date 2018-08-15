@@ -3,11 +3,11 @@ import { takeLatest, put, select } from 'redux-saga/effects';
 import { FETCH_GOALS } from './constants';
 import { fetchGoalsSuccess, fetchGoalsError } from './actions';
 import { database as db } from '../../configureStore';
-import { getUid } from '../LoginPage/selectors';
+import { selectUserUid } from '../LoginPage/selectors';
 
 export function* fetchGoals() {
   let list;
-  const uid = yield select(getUid);
+  const uid = yield select(selectUserUid);
   yield db.settings({ timestampsInSnapshots: true });
 
   try {

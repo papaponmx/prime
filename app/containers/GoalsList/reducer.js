@@ -8,6 +8,8 @@ import {
   FETCH_GOALS,
   FETCH_GOALS_ERROR,
   FETCH_GOALS_SUCCESS,
+  DELETE_GOAL,
+  DELETE_GOAL_ERROR,
 } from './constants';
 
 export const initialState = {
@@ -36,6 +38,15 @@ function goalsListReducer(state = initialState, { type, payload }) {
         isLoading: false,
         isLoaded: true,
         list: payload,
+      };
+    case DELETE_GOAL:
+      return {
+        ...state,
+      };
+    case DELETE_GOAL_ERROR:
+      return {
+        ...state,
+        error: payload,
       };
     default:
       return state;

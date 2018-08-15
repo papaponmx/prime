@@ -3,7 +3,7 @@
  */
 
 export const selectUser = state => state.user;
-export const getUid = state => state.user.data.uid;
+export const selectUserUid = state => state.data.uid;
 
 /**
  * Other specific selectors

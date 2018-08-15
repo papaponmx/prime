@@ -5,6 +5,9 @@
  */
 
 import {
+  DELETE_GOAL,
+  DELETE_GOAL_ERROR,
+  DELETE_GOAL_SUCCESS,
   FETCH_GOALS,
   FETCH_GOALS_ERROR,
   FETCH_GOALS_SUCCESS,
@@ -23,5 +26,22 @@ export const fetchGoalsError = payload => ({
 
 export const fetchGoalsSuccess = goals => ({
   type: FETCH_GOALS_SUCCESS,
+  payload: goals,
+});
+
+export function deleteGoal(goalId) {
+  return {
+    type: DELETE_GOAL,
+    payload: goalId,
+  };
+}
+
+export const deleteGoalError = payload => ({
+  type: DELETE_GOAL_ERROR,
+  payload,
+});
+
+export const deleteGoalSuccess = goals => ({
+  type: DELETE_GOAL_SUCCESS,
   payload: goals,
 });
