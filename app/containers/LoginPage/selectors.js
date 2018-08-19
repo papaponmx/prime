@@ -3,14 +3,6 @@
  */
 
 export const selectUser = state => state.user;
-export const selectUserUid = state => state.data.uid;
-
-/**
- * Other specific selectors
- */
-
-/**
- * Default selector used by LoginPage
- */
+export const selectUserUid = state => state.user.data.uid;
 
 export default selectUser;

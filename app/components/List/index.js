@@ -32,7 +32,7 @@ const List = ({ list, listType = null }) => {
 /* eslint-enable */
 
 List.propTypes = {
-  list: PropTypes.array.isRequired,
+  list: PropTypes.array,
   listType: PropTypes.oneOf(['goals', 'roles', null]),
 };
 

@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<List /> Expect to have unit tests specified 1`] = `
+<div>
+  <h3>
+    <FormattedMessage
+      defaultMessage="This is the List component !"
+      id="app.components.List.header"
+      values={Object {}}
+    />
+  </h3>
+  <ul>
+    <li
+      key="goal-.mzir08u"
+    >
+      <Link
+        replace={false}
+        to="goals/goal-.mzir08u"
+      >
+         
+        Do something
+         
+      </Link>
+    </li>
+    <li
+      key="goal-.ppalv8o"
+    >
+      <Link
+        replace={false}
+        to="goals/goal-.ppalv8o"
+      >
+         
+        Some goal
+         
+      </Link>
+    </li>
+  </ul>
+</div>
+`;
