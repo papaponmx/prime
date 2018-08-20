@@ -29,7 +29,7 @@ export class GoalsList extends React.Component {
   }
 
   render() {
-    const { list, isLoaded, isLoading } = this.props.goals;
+    const { list, isLoaded } = this.props.goals;
     return (
       <div>
         <FormattedMessage {...messages.header} />
@@ -40,7 +40,6 @@ export class GoalsList extends React.Component {
 }
 
 GoalsList.propTypes = {
-  dispatch: PropTypes.func,
   // fetchGoals: PropTypes.func,
   goals: PropTypes.object,
 };

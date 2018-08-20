@@ -1,13 +1,20 @@
-import { defaultAction } from '../actions';
-import { DEFAULT_ACTION } from '../constants';
+import {
+  // DELETE_GOAL,
+  // DELETE_GOAL_ERROR,
+  // DELETE_GOAL_SUCCESS,
+  FETCH_GOALS,
+  // FETCH_GOALS_ERROR,
+  // FETCH_GOALS_SUCCESS,
+} from '../constants';
+import { fetchGoals } from '../actions';
 
 describe('GoalsList actions', () => {
   describe('Default Action', () => {
-    it('has a type of DEFAULT_ACTION', () => {
+    it('has a type of FETCH_GOALS', () => {
       const expected = {
-        type: DEFAULT_ACTION,
+        type: FETCH_GOALS,
       };
-      expect(defaultAction()).toEqual(expected);
+      expect(fetchGoals()).toEqual(expected);
     });
   });
 });
