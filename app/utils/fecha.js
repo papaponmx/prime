@@ -9,8 +9,11 @@ const defaultOptions = {
 // expect milis
 
 const fecha = (milis, locale = 'en-US', options = defaultOptions) => {
-  const d = new Date(milis);
-  return d.toLocaleDateString(locale, options);
+  if (typeof milis === 'number') {
+    const d = new Date(milis);
+    return d.toLocaleDateString(locale, options);
+  }
+  return null;
 };
 // return 25 Mar 2018 at 23h
 
