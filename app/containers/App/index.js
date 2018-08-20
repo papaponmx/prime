@@ -20,6 +20,7 @@ import LoginPage from '../LoginPage/Loadable';
 import RequireAuth from '../Auth';
 import GoalsList from '../GoalsList/Loadable';
 import GoalDetailPage from '../GoalDetail/Loadable';
+import AddGoalPage from '../AddGoalPage/Loadable';
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={RequireAuth(HomePage)} />
         <Route exact path="/goals" component={RequireAuth(GoalsList)} />
+        <Route exact path="/goals/add" component={RequireAuth(AddGoalPage)} />
         <Route
           exact
           path="/goals/:id"
