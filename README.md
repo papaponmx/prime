@@ -1,6 +1,5 @@
-IDEA: Move this section to docs folder.
-
 # Prime
+[![Coverage Status](https://coveralls.io/repos/github/papaponmx/prime/badge.svg?branch=master)](https://coveralls.io/github/papaponmx/prime?branch=master)
 
 Welcome to prime. This is a tool created to help achieve your goals on a week to week basis.
 
