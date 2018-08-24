@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import { Field, reduxForm, reducer } from 'redux-form';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
 import { addGoal } from '../GoalsList/actions';
 import renderField from './renderField';
+import saga from './saga';
 
 const required = value => (value ? undefined : 'Required');
 const maxLength = value =>
@@ -75,9 +77,11 @@ const withConnect = connect(
 );
 
 const withReducer = injectReducer({ key: 'form', reducer });
+const withSaga = injectSaga({ key: 'addGoal', saga });
 
 export default compose(
   withReducer,
+  withSaga,
   withConnect,
   withForm,
 )(AddGoalForm);
