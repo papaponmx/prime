@@ -11,6 +11,9 @@ import {
   FETCH_GOALS,
   FETCH_GOALS_ERROR,
   FETCH_GOALS_SUCCESS,
+  ADD_GOAL,
+  ADD_GOAL_ERROR,
+  ADD_GOAL_SUCCESS,
 } from './constants';
 
 export function fetchGoals() {
@@ -44,4 +47,19 @@ export const deleteGoalError = payload => ({
 export const deleteGoalSuccess = goals => ({
   type: DELETE_GOAL_SUCCESS,
   payload: goals,
+});
+
+export const addGoal = values => ({
+  type: ADD_GOAL,
+  payload: values,
+});
+
+export const addGoalError = values => ({
+  type: ADD_GOAL_ERROR,
+  payload: values,
+});
+
+export const addGoalSuccess = values => ({
+  type: ADD_GOAL_SUCCESS,
+  payload: values,
 });

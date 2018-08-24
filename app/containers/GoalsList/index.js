@@ -48,11 +48,9 @@ const mapStateToProps = createStructuredSelector({
   goals: makeSelectGoalsList(),
 });
 
-function mapDispatchToProps(dispatch) {
-  return {
-    fetchGoals: dispatch(fetchGoals()),
-  };
-}
+const mapDispatchToProps = dispatch => ({
+  fetchGoals: dispatch(fetchGoals()),
+});
 
 const withConnect = connect(
   mapStateToProps,
