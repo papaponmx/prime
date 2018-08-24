@@ -20,11 +20,11 @@ const renderField = ({
 );
 
 renderField.propTypes = {
-  input: PropTypes.string,
-  label: PropTypes.string,
-  type: PropTypes.string,
-  meta: PropTypes.any,
-  name: PropTypes.string,
+  input: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  meta: PropTypes.any.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export default renderField;

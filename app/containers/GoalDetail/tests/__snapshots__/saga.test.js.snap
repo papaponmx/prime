@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`defaultSaga Saga should dispatch the push(\`/\`) action if it request is successful 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "PUT": Object {
+    "action": Object {
+      "payload": [FirebaseError: Function CollectionReference.doc() requires its first argument to be of type string, but it was: null],
+      "type": "app/GoalsList/DELETE_GOAL_ERROR",
+    },
+    "channel": null,
+  },
+}
+`;
+
+exports[`defaultSaga Saga should dispatch the push(\`/\`) action if it request is successful 2`] = `undefined`;

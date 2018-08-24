@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renderField() Should render field 1`] = `
+<renderField
+  label="Goal"
+  name="goal"
+  type="text"
+/>
+`;
+
+exports[`renderField() Should require aditional props 1`] = `<renderField />`;
