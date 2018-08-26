@@ -43,7 +43,7 @@ export class GoalDetail extends React.Component {
         </p>
         <button onClick={deleteGoal}>Delete Goal</button>
         <br />
-        {isDone && <button onClick={markGoalAsDone}>Mark goal as Done</button>}
+        {!isDone && <button onClick={markGoalAsDone}>Mark goal as Done</button>}
       </section>
     );
   }
