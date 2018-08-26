@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoginPage /> Should render component 1`] = `
+<div>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+  >
+    <title>
+      LoginPage Prime Planner App
+    </title>
+    <meta
+      content="Login into your potential"
+      name="description"
+    />
+  </HelmetWrapper>
+  <h1>
+    <FormattedMessage
+      defaultMessage="Welcome"
+      id="app.containers.LoginPage.header"
+      values={Object {}}
+    />
+  </h1>
+  <GoogleButton
+    disabled={false}
+    label="Sign in with Google"
+    onClick={[Function]}
+    type="dark"
+  />
+  <p>
+    <FormattedMessage
+      defaultMessage="Let's get you started"
+      id="app.containers.LoginPage.signInMessage"
+      values={Object {}}
+    />
+  </p>
+</div>
+`;
