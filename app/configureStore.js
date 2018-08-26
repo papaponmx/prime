@@ -7,7 +7,7 @@ import { routerMiddleware } from 'react-router-redux';
 import firebase from 'firebase';
 import createSagaMiddleware from 'redux-saga';
 import createReducer from './reducers';
-import config from './.firebase.config';
+import config from '../.firebase.config';
 
 // Firebase
 export const app = firebase.initializeApp(config);

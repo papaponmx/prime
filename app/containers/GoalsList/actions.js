@@ -14,6 +14,7 @@ import {
   ADD_GOAL,
   ADD_GOAL_ERROR,
   ADD_GOAL_SUCCESS,
+  MARK_GOAL_AS_DONE,
 } from './constants';
 
 export function fetchGoals() {
@@ -62,4 +63,9 @@ export const addGoalError = values => ({
 export const addGoalSuccess = values => ({
   type: ADD_GOAL_SUCCESS,
   payload: values,
+});
+
+export const markGoalAsDone = goalId => ({
+  type: MARK_GOAL_AS_DONE,
+  payload: goalId,
 });

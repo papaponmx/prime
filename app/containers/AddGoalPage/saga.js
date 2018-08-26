@@ -7,8 +7,6 @@ import uniqueId from '../../utils/uniqueId';
 import { ADD_GOAL } from '../GoalsList/constants';
 
 export function* addGoalSaga({ payload }) {
-  console.log('DQTP, inside addGoalSaga');
-
   const createdAt = new Date().getTime();
   const id = uniqueId('goal');
   const { goal: name, dueDate: date } = payload;

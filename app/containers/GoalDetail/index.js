@@ -14,14 +14,14 @@ import injectSaga from 'utils/injectSaga';
 import saga from './saga';
 import messages from './messages';
 import { selectGoalById } from '../GoalsList/selectors';
-import { deleteGoal } from '../GoalsList/actions';
+import { deleteGoal, markGoalAsDone } from '../GoalsList/actions';
 import fecha from '../../utils/fecha';
 
 /* eslint-disable react/prefer-stateless-function */
 export class GoalDetail extends React.Component {
   render() {
-    const { deleteGoal, markGoalAsDone } = this.props;
-    const { name: goalName, createdAt, dueDate, id, isDone } = this.props.goal;
+    const { deleteGoal, markGoalAsDone } = this.props; // eslint-disable-line
+    const { name: goalName, createdAt, dueDate, isDone } = this.props.goal;
     // TODO: Define what should I include in this view
     // TODO: Add edit button
     // TODO: Styles, here.
@@ -41,20 +41,24 @@ export class GoalDetail extends React.Component {
           This goal was created at{' '}
           <time dateTime={createdAt}> {fecha(createdAt)}</time>
         </p>
-        <a onClick={deleteGoal}>Delete Goal</a>
+        <button onClick={deleteGoal}>Delete Goal</button>
         <br />
-        {isDone && <a onClick={markGoalAsDone}>Mark goal as Done</a>}
+        {isDone && <button onClick={markGoalAsDone}>Mark goal as Done</button>}
       </section>
     );
   }
 }
 
 GoalDetail.propTypes = {
-  // name: PropTypes.string,
-  // createdAt: PropTypes.string,
-  // dueDate: PropTypes.string,
-  // id: PropTypes.string,
-  // isDone: PropTypes.bool,
+  deleteGoal: PropTypes.func,
+  markGoalAsDone: PropTypes.func,
+  goal: PropTypes.oneOfType({
+    name: PropTypes.string.isRequired,
+    createdAt: PropTypes.string.isRequired,
+    dueDate: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    isDone: PropTypes.bool.isRequired,
+  }),
 };
 
 const mapStateToProps = (state, props) => ({
