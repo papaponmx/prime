@@ -25,6 +25,6 @@ describe('<GoalDetail />', () => {
   });
 
   it('Should render a button', () => {
-    expect(renderedComponent.find('a').length).toBe(1);
+    expect(renderedComponent.find('button').length).toBe(2);
   });
 });
