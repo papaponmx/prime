@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AddGoalPage /> Should render 1`] = `
+<section>
+  <FormattedMessage
+    defaultMessage="This is AddGoalPage container !"
+    id="app.containers.AddGoalPage.header"
+    values={Object {}}
+  />
+  <withReducer(withSaga(Connect(ReduxForm))) />
+</section>
+`;

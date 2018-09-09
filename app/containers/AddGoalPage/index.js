@@ -25,7 +25,7 @@ export class AddGoalPage extends React.Component {
 }
 
 AddGoalPage.propTypes = {
-  dispatch: PropTypes.func.isRequired,
+  dispatch: PropTypes.func,
 };
 
 function mapDispatchToProps(dispatch) {

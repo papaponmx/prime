@@ -1,10 +1,22 @@
-// import React from 'react';
-// import { shallow } from 'enzyme';
+import React from 'react';
+import { shallow } from 'enzyme';
 
-// import { AddGoalPage } from '../index';
+import { AddGoalPage } from '../index';
+import AddGoalForm from '../AddGoalForm';
 
 describe('<AddGoalPage />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(false);
+  const component = shallow(<AddGoalPage />);
+  const children = AddGoalForm;
+
+  it('Should render', () => {
+    expect(component).toMatchSnapshot();
+  });
+
+  it('Should render a section', () => {
+    expect(component.type()).toEqual('section');
+  });
+
+  it('Should have children', () => {
+    expect(component.find(children)).toBeTruthy();
   });
 });
