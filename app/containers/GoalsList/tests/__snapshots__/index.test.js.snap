@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GoalsList /> Should render list of goals 1`] = `
+<div>
+  <FormattedMessage
+    defaultMessage="This is GoalsList container !"
+    id="app.containers.GoalsList.header"
+    values={Object {}}
+  />
+</div>
+`;
