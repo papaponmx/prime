@@ -7,5 +7,3 @@ exports[`renderField() Should render field 1`] = `
   type="text"
 />
 `;
-
-exports[`renderField() Should require aditional props 1`] = `<renderField />`;

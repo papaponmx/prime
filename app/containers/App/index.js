@@ -21,6 +21,7 @@ import RequireAuth from '../Auth';
 import GoalsList from '../GoalsList/Loadable';
 import GoalDetailPage from '../GoalDetail/Loadable';
 import AddGoalPage from '../AddGoalPage/Loadable';
+import Navbar from '../../components/Navbar';
 
 export default function App() {
   return (
@@ -37,6 +38,7 @@ export default function App() {
         <Route exact path="/login" component={LoginPage} />
         <Route component={NotFoundPage} />
       </Switch>
+      <Navbar />
     </div>
   );
 }
