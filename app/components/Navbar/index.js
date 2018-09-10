@@ -3,79 +3,43 @@
  */
 
 import React from 'react';
-import { push } from 'react-router-redux';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Toolbar from '@material-ui/core/Toolbar';
 
-import checkedIcon from '../../images/baseline-check_circle-24px.svg';
-import faceIcon from '../../images/baseline-face-24px.svg';
-import settingsIcon from '../../images/baseline-settings-20px.svg';
-import trendingUpIcon from '../../images/baseline-trending_up-24px.svg';
+import { NavbarContainer, AppBarStyled } from './styles';
+import renderIcons from './renderIcons';
 
-import { NavbarContainer, AppBarStyled, IconWrapper } from './styles';
-
-export const Icons = [ 
-  { 
-    altText: 'Checked',
-    name: checkedIcon,
-    route: '/goals',
-  }, 
-  {
-    altText: 'Face',
-    name: faceIcon,
-    route: '/roles',
-  }, 
-  {
-    altText: 'Trending up graph',
-    name: settingsIcon,
-    route: '/settings',
-  }, 
-  {
-    altText: 'Settings',
-    name: trendingUpIcon,    
-    route: '/stats',
-  }, 
-];
-
-export const renderIcons = dispatch => Icons.map(
-  ({ altText, name, route }) => (
-    <IconWrapper 
-    onClick={() => dispatch(push(route))} 
-    key={route}
-    active={location.pathname === route}
-    >
-      <img alt={altText} src={name} />
-    </IconWrapper>
-  )
-)
-
-export const Navbar = ({ dispatch }) => (
+export const Navbar = ({ dispatch, pathname }) => (
   <div>
     <AppBarStyled>
       <Toolbar variant="dense">
-        <NavbarContainer>
-          {renderIcons(dispatch)}
-        </NavbarContainer>
+        <NavbarContainer>{renderIcons(dispatch, pathname)}</NavbarContainer>
       </Toolbar>
     </AppBarStyled>
   </div>
 );
 
-const mapStateToProps = params => {
+const mapStateToProps = state => ({
+  pathname: state.route.location.pathname,
   /*
   * TODO: Implement logic when user is authenticated and when not.
   */
-};
+});
 const mapDispatchToProps = dispatch => ({
   /*
  * TODO: Add redirects available
  */
 });
 
+Navbar.proptypes = {
+  dispatch: PropTypes.func,
+  pathname: PropTypes.string,
+};
+
 const withConnect = connect(
-  // mapStateToProps,
+  mapStateToProps,
   // mapDispatchToProps,
 );
 

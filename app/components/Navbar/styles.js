@@ -7,26 +7,25 @@ export const NavbarContainer = styled.nav`
   justify-items: center;
   margin-left: auto;
   margin-right: auto;
-  min-height: 48px;
+  min-height: 60px;
 `;
 
-
-// TODO: Replace tomato on line 19 for the theme color
+// TODO: Replace colors on this files for theme variables
 export const IconWrapper = styled.span`
-display: flex;
-width: 20vw;
-height: 100%;
-${props => props.active ? 'border-bottom: 2px solid tomato;' : ''}
-& > img {
-  margin-left: auto;
-  margin-right: auto;
-}
+  display: flex;
+  width: 20vw;
+  height: 100%;
+  ${props =>
+    props.active ? 'border-bottom: 4px solid #FF47DA;' : ''} & > img {
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 export const AppBarStyled = styled.header`
-background: radial-gradient(
-  circle, 
-  rgba(95, 81, 142, 1) 0%, 
-  rgba(255, 71, 218, 1) 600%
+  background: radial-gradient(
+    circle,
+    rgba(95, 81, 142, 1) 0%,
+    rgba(255, 71, 218, 1) 300%
   );
 `;
