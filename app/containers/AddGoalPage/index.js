@@ -11,15 +11,18 @@ import { FormattedMessage } from 'react-intl';
 import { compose } from 'redux';
 import messages from './messages';
 import AddGoalForm from './AddGoalForm';
+import { Header, Section } from './styles';
 
 /* eslint-disable react/prefer-stateless-function */
 export class AddGoalPage extends React.Component {
   render() {
     return (
-      <section>
-        <FormattedMessage {...messages.header} />
+      <Section>
+        <Header>
+          <FormattedMessage {...messages.header} />
+        </Header>
         <AddGoalForm />
-      </section>
+      </Section>
     );
   }
 }

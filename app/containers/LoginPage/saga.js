@@ -1,4 +1,5 @@
 import { takeLatest, put } from 'redux-saga/effects';
+import { push } from 'react-router-redux';
 import {
   LOGIN_USER,
   PRIME_APP_USER_TOKEN,
@@ -36,6 +37,7 @@ export function* loginUserSaga() {
       message: error.message,
     });
   }
+  yield put(push('/goals'));
 }
 
 // Individual exports for testing

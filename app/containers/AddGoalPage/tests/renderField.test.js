@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import renderField from '../renderField';
+import renderField from '../../../components/Forms/renderField';
 
 describe('renderField()', () => {
   it('Should render field', () => {

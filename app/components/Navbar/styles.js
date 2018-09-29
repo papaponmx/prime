@@ -28,4 +28,7 @@ export const AppBarStyled = styled.header`
     rgba(95, 81, 142, 1) 0%,
     rgba(255, 71, 218, 1) 300%
   );
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 `;

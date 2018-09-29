@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import { Field, reduxForm, reducer } from 'redux-form';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
 import { addGoal } from '../GoalsList/actions';
-import renderField from './renderField';
+import renderField from '../../components/Forms/renderField';
 import saga from './saga';
+import { TwoColumnRow } from './styles';
 
 const required = value => (value ? undefined : 'Required');
 const maxLength = value =>
@@ -23,16 +25,35 @@ class AddGoalForm extends Component {
       <form onSubmit={handleSubmit}>
         <Field
           name="goal"
+          defaultValue="Goal Name"
           type="text"
           component={renderField}
           label="Goal"
           validate={[required, maxLength, minValue]}
+          required
         />
+        <TwoColumnRow>
+          <Field
+            component={renderField}
+            label="Due Date"
+            type="date"
+            name="dueDate"
+            defaultValue="2017-05-24"
+          />
+          <Field
+            component={renderField}
+            label="Due Date"
+            type="date"
+            name="dueDate"
+            defaultValue="2017-05-24"
+          />
+        </TwoColumnRow>
         <Field
-          name="dueDate"
-          type="date"
           component={renderField}
-          label="Due date"
+          label="Description"
+          type="text"
+          name="description"
+          multiline
         />
         <div>
           <button type="submit" disabled={submitting}>

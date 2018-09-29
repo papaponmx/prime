@@ -19,7 +19,7 @@ import saga from './saga';
 import messages from './messages';
 import { fetchGoals } from './actions';
 import List from '../../components/List';
-
+import PageWrapper from '../../components/PageWrapper';
 /* eslint-disable react/prefer-stateless-function */
 export class GoalsList extends React.Component {
   componentDidMount() {
@@ -31,10 +31,10 @@ export class GoalsList extends React.Component {
   render() {
     const { list, isLoaded } = this.props.goals;
     return (
-      <div>
+      <PageWrapper>
         <FormattedMessage {...messages.header} />
         {isLoaded && <List list={list} listType="goals" />}
-      </div>
+      </PageWrapper>
     );
   }
 }
