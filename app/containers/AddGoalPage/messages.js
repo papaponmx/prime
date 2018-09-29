@@ -9,6 +9,6 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   header: {
     id: 'app.containers.AddGoalPage.header',
-    defaultMessage: 'This is AddGoalPage container !',
+    defaultMessage: 'New Goal',
   },
 });
