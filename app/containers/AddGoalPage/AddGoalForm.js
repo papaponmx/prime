@@ -7,7 +7,8 @@ import { compose } from 'redux';
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
 import { addGoal } from '../GoalsList/actions';
-import renderField from '../../components/Forms/renderField';
+import renderField from '../../components/Forms/Input';
+import Select from '../../components/Forms/Select';
 import saga from './saga';
 import { TwoColumnRow } from './styles';
 
@@ -40,13 +41,7 @@ class AddGoalForm extends Component {
             name="dueDate"
             defaultValue="2017-05-24"
           />
-          <Field
-            component={renderField}
-            label="Due Date"
-            type="date"
-            name="dueDate"
-            defaultValue="2017-05-24"
-          />
+          <Field component={Select} label="Role Associated" name="role" />
         </TwoColumnRow>
         <Field
           component={renderField}

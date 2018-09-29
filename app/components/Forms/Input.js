@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import { FieldWrapper } from './styles';
 
 // TODO: Move this into Form/common inputs
-const renderField = ({
+const Input = ({
   input,
   defaultValue,
   label,
@@ -31,7 +31,7 @@ const renderField = ({
 
 // TODO: Pass texts as theme variables
 
-renderField.propTypes = {
+Input.propTypes = {
   input: PropTypes.any,
   label: PropTypes.string,
   type: PropTypes.string,
@@ -40,4 +40,4 @@ renderField.propTypes = {
   defaultValue: PropTypes.string,
 };
 
-export default renderField;
+export default Input;

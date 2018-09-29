@@ -19,6 +19,7 @@ export const Section = styled.section`
 
 export const TwoColumnRow = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 50%);
+  grid-template-columns: repeat(2, 45%);
+  grid-gap: 12px;
 `;
 // TODO: Add color, and font-size as a config variable
